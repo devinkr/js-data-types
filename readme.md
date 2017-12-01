@@ -616,7 +616,6 @@ letters[1][2]
 ### Array Methods
 
 There are a lot of useful methods that come with Javascript we can use to inspect and modify arrays. To learn what some of them are...
-* `.split`
 * `.length`
 * `.push`
 * `.indexOf`
