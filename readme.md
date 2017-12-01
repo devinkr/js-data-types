@@ -197,6 +197,7 @@ If you are working on a team, your documentation and commenting practices often 
 
 ## Break (10 minutes / 10:55)
 
+## Primitive Data Types in JavaScript
 Simply defined, a primitive data type is one that represents a single value. In JavaScript there are five primitive types:
 
 1. Numbers
