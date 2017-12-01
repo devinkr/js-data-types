@@ -396,7 +396,8 @@ Sometimes you will need to use special characters or formatting in strings that 
 > You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).  
 
 #### You Do (5 minutes / 11:30)
-* Write your full name in JavaScript.
+* Write two variables in JavaScript, one with your first name and one with your last name.
+* Use string interpolation to add your first name to your last name and store that in a variable with your full name.
 * Get the first letter of your name using a string method.
 * Write your address using proper spacing in JavaScript.
 * Get just your first name from your name.
@@ -741,11 +742,3 @@ There is a standard list of rules [here](https://standardjs.com/rules.html).
 The errors for the most part should be understandable plain English but if the meaning of an error isn't clear, google "Standard JS [Error Message Here]".
 
 To use the formatter press `ctrl-alt-f` and the formatter will correct any errors it can in your file.
-
-https://github.com/ga-wdi-exercises/js-data-types/blob/master/exercise.md
-
-https://git.generalassemb.ly/ga-wdi-lessons/es6#destructuring-10-minutes--055
-
-
-
-https://git.generalassemb.ly/ga-wdi-lessons/js-intro/blob/master/data-types-and-collections.md
