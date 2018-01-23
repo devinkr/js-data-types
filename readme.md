@@ -16,10 +16,10 @@ From the command line:
 
 ```shell
 $ cd ~/wdi/sandbox
-$ mkdir js-data-types-and-control-flow
-$ cd js-data-types-and-control-flow
+$ mkdir js-data-types
+$ cd js-data-types
 $ touch index.html script.js
-$ atom .
+$ code .
 ```
 
 Update the files as follows:
@@ -29,6 +29,7 @@ In index.html:
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>This is the Title</title>
     <script src="script.js"></script>
   </head>
@@ -72,7 +73,7 @@ In index.html, in the head after the other script tag, add:
 
 Go back to the browser and refresh the page.
 
-**Bonus** [async and deferred attributes](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+**Bonus Reading:** [async and deferred attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
 ## Development Tools (5 minutes / 10:20)
 
@@ -82,32 +83,24 @@ We have seen `console.log` frequently in the pre-work and we will see it much mo
 The most difficult aspect of programming is not having insight into the exact value of things in a running program.
 `console.log` provides us this insight.
 
-This console is also known as a REPL.
-
 ![REPL 42](https://user-images.githubusercontent.com/7882341/27314489-4275c7b4-5542-11e7-8c16-6b6431f9cc42.png)
 
-This is a REPL.
-When you hit **Enter**, you tell the computer:
+This console is also known as a REPL (Read-Eval-Print-Loop). When you hit **Enter**, you tell the computer:
 
 1. **R**ead the JavaScript I just wrote (`42`).
 2. **E**valuate it (calculate its value, `42`).
 3. **P**rint the value that was evaluated (`42`).
 4. **L**oop, returning control to the user and wait to be asked to read the next line.
 
+Let's try it out. In your script.js file, type:
+
 ```js
-const randomNum = Math.floor(Math.random() * 10)
+const number = 2
 
-console.log(`The random number is ${randomNum}`)
-
-```
+console.log(number)
 
 ```
-Arithmetic Operations
-  + : Addition
-  – : Subtraction
-  * : Multiplication
-  / : Division
-```
+
 #### Exercise (5 minutes / 10:25)
 
 1. Print out your name in the console.
@@ -120,8 +113,7 @@ Arithmetic Operations
 
 ### `debugger` (5 minutes / 10:30)
 
-`debugger` is like a super powered `console.log`.
-Where `console.log` leaves us a little evidence about what's going on in the program execution, debugger puts the process on hold and lets us look at any part of the paused process.
+`debugger` is like another developer tool. Where `console.log` leaves us a little evidence about what's going on in the program execution, debugger puts the process on hold and lets us look at any part of the paused process.
 It then lets you walk through your script step by step.
 
 ```js
@@ -135,23 +127,21 @@ let messageParts = message.split(", ")
 
 We don't actually need to have a `debugger` line and StandardJS doesn't like it.
 
-Instead we can set breakpoints directly through the developer tools.
-
-Much more information on debugging with Chrome Dev Tools is available [here](https://developers.google.com/web/tools/chrome-devtools/javascript/).
+Instead we can set breakpoints directly through the developer tools. More information on debugging with Chrome Dev Tools is available [here](https://developers.google.com/web/tools/chrome-devtools/javascript/).
 
 You can also [debug using VS Code](https://code.visualstudio.com/docs/editor/debugging)!
 
 ## Syntax (10 minutes / 10:40)
 
 ### Semicolons
-- Wouldn't recommend using them, but if you do be consistent!
+- Semicolons can be put at the end of each line.
+- We don't recommend using them, but if you do be consistent!
 - The only catch with not using semicolons is that you can't start a line of code with `(`, `[`, or a backtick (`). 
 - References:
     - [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
     - [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
     - [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
     - [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
-NPM, Bootstrap, Vue, and Lodash don't use semicolons!
 
 ### camelCase
 
@@ -160,23 +150,13 @@ Javascript variables and function names are written using camel case syntax. Tha
 - First letter of remaining words uppercase
 - No spaces or punctuation between words
 
-> You should use kebab-case for HTML classes -- CSS is case insensitive so camelCase could give you issues! Kebab case is where words are separated by `-`s, snake_case uses underscores! 
+> Note: You should use kebab-case for HTML classes. CSS is case insensitive so camelCase could give you issues! Kebab case is where words are separated by `-`s, snake_case uses underscores! 
 
 #### Examples
 
 ```js
 var pizzaTopping = "pepperoni"
-var isThisVarCamelCase = true
-
-// Function expression
-var helloWorld = function () {
-  console.log("Hello World!")
-}
-
-// Function declaration
-function helloWorld () {
-  console.log("Hello World!")
-}
+var isThisVariableCamelCase = true
 ```
 
 ### Comments
@@ -184,6 +164,8 @@ function helloWorld () {
 Comments are an extremely important part of writing code. They help us make sense of our code, especially for other people reading our code, or when we have walked away from some code and have completely forgotten what certain sections of it do. This happens much more quickly than you may imagine.
 
 If you are working on a team, your documentation and commenting practices often translate to how easy you are to work with!
+
+Shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 
 ```js
 // Single line comment
