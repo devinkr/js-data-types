@@ -12,7 +12,7 @@ Today we are going to get started with our first real programming language of th
 
 ## Linking a JavaScript file (10 minutes / 10:15)
 
-From the command line:
+We'll start by creating a new directory with html and JS files. From the command line:
 
 ```shell
 $ cd ~/wdi/sandbox
@@ -22,30 +22,46 @@ $ touch index.html script.js
 $ code .
 ```
 
-Update the files as follows:
+Go into the HTML file and enter HTML boilerplate code:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+Next, we will link the JS file into the HTML file, by adding a script element into the ```head```, as follows:
 
 In index.html:
 ```html
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>This is the Title</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
     <script src="script.js"></script>
-  </head>
-  <body>
-  </body>
+</head>
+<body>
+    
+</body>
 </html>
 ```
 
-In script.js
+Once the file is linked, we can go into our JS file and begin coding. In script.js:
+
 ```js
 console.log("hello world")
 ```
 
 Back at the command line run:
-```bash
-open index.html
+```shell
+$ open index.html
 ```
 
 Your default browser will open (we ask for this class you use Chrome but other browsers will have similar tools you should definitely explore).
@@ -73,9 +89,9 @@ In index.html, in the head after the other script tag, add:
 
 Go back to the browser and refresh the page.
 
-**Bonus Reading:** [async and deferred attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+**Bonus Reading:** [async and defer attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
-## Development Tools (5 minutes / 10:20)
+## Developer Tools (5 minutes / 10:20)
 
 ### `console.log`
 
@@ -85,7 +101,7 @@ The most difficult aspect of programming is not having insight into the exact va
 
 ![REPL 42](https://user-images.githubusercontent.com/7882341/27314489-4275c7b4-5542-11e7-8c16-6b6431f9cc42.png)
 
-This console is also known as a REPL (Read-Eval-Print-Loop). When you hit **Enter**, you tell the computer:
+The console is also known as a REPL (Read-Eval-Print-Loop). When you hit **Enter**, you tell the computer:
 
 1. **R**ead the JavaScript I just wrote (`42`).
 2. **E**valuate it (calculate its value, `42`).
@@ -100,16 +116,18 @@ const number = 2
 console.log(number)
 
 ```
+Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `2`. 
 
-#### Exercise (5 minutes / 10:25)
+Another example of a REPL is: https://repl.it/. This may be a helpful tool to use throughout class to test code.
+
+#### Try it together (5 minutes / 10:25)
 
 1. Print out your name in the console.
 2. Print out the sum of 1 to 10.
-3. Type in the following code and explain how it works:
+3. Type in the following code:
 ```
-  console.log("I'm a " + "programmer");
+  console.log("I'm a " + "programmer")
 ```
-4. Print whatever you want in the console. Tip: if you want to write multiline command, use Shift + Enter to change line.
 
 ### `debugger` (5 minutes / 10:30)
 
@@ -150,8 +168,6 @@ Javascript variables and function names are written using camel case syntax. Tha
 - First letter of remaining words uppercase
 - No spaces or punctuation between words
 
-> Note: You should use kebab-case for HTML classes. CSS is case insensitive so camelCase could give you issues! Kebab case is where words are separated by `-`s, snake_case uses underscores! 
-
 #### Examples
 
 ```js
@@ -159,13 +175,13 @@ var pizzaTopping = "pepperoni"
 var isThisVariableCamelCase = true
 ```
 
+> Note: Other types: kebab-case, which separates words with dashes `-`s, and snake case, which uses underscores. Use kebab case for HTML classes because CSS is case insensitive so camelCase could give you issues. snake case is used in programming languages like Ruby.
+
 ### Comments
 
 Comments are an extremely important part of writing code. They help us make sense of our code, especially for other people reading our code, or when we have walked away from some code and have completely forgotten what certain sections of it do. This happens much more quickly than you may imagine.
 
 If you are working on a team, your documentation and commenting practices often translate to how easy you are to work with!
-
-Shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 
 ```js
 // Single line comment
@@ -176,6 +192,8 @@ Shortcut: Highlight code and press **Command + /** (`⌘ + /`)
   comments
 */
 ```
+
+Keyboard shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 
 ## Break (10 minutes / 10:55)
 
@@ -226,14 +244,14 @@ The modulus operator - `%` - returns the remainder of a division operation.
 // => 2, which is the remainder of 12 / 5
 ```
 
-Modulus has a pretty handy use case: to check if a number is even. We can do this by running `NUMBER % 2`. If a number is even, the result should be 0 (i.e., there should be no remainder).
+Modulus has a pretty handy use case: to check if a number is even. We can do this by running `NUMBER % 2`. If a number is even, the result should be 0 (i.e. there should be no remainder).
 
 ```js
 4 % 2
-// => 0, because 4 is even
+// => 0, so 4 is even
 
 5 % 2
-// => , because 5 is odd. When 5 is divided by 2, the remainder is 1.
+// => 1, so 5 is odd. When 5 is divided by 2, the remainder is 1.
 ```
 
 ### NaN ("Not a number")
@@ -244,8 +262,7 @@ A special number...that's not a number?
 typeof NaN
 // => Number
 ```
-
-You usually get `NaN` when the result of a math operation is not real (e.g., dividing 0 by 0, multiplying strings together).
+`NaN` is the return value from operations which have an undefined numerical result (e.g. dividing 0 by 0, multiplying strings together).
 
 ```js
 0/0
@@ -270,12 +287,6 @@ isNaN(myUnrealNumber)
 
 In order to **declare** a variable in JavaScript we use the keywords `var`, `const`, and `let`. The original declaration keyword was `var`, but in newer versions of JavaScript `const` and `let` were implemented. `const` is used on variables that will not be changed in your JavaScript code. `let` is used for variables that do change. People tend to use either `var` for everything or `const` and `let` consistently.
 
-Here is an example of variable declaration in JavaScript.
-```js
-let unassigned
-console.log(unassigned)
-```
-
 Most of the time, we want our variables to immediately store a value. Therefore, we **assign** values to our variables when we declare them. Here are three examples of variable assignment and declaration at the same time.
 
 ```js
@@ -289,7 +300,14 @@ let doubleSum = 2 * sum
 console.log(doubleSum)
 ```
 
-Once we have a declared variable, we can change its value. Here are some examples of both assigning our original `unassigned` variable
+Here is an example of variable declaration that doesn't immediately have a value assigned:
+
+```js
+let unassigned
+console.log(unassigned)
+```
+
+Once we have a declared variable, we can change its value. Here are some examples of both assigning our `unassigned` variable
 
 ```js
 unassigned = 'assigned now'
@@ -325,7 +343,7 @@ In summary, the difference is that `undefined` implies nothing because it never 
 
 ## Strings (10 minutes / 11:25)
 
-Strings are how JavaScript represents text. They are a series of 0+ characters in single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are all examples of strings in JavaScript.
+Strings are how JavaScript represents text. They are a series of characters in single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are all examples of strings in JavaScript.
 
 In order to join multiple strings together, you can use **concatenation** or **interpolation**.
 
@@ -334,7 +352,8 @@ Concatenation is when you add multiple strings together.
 let hello_world = "Hello" + "world"
 ```
 
-Interpolation is where you use one string as a variable within another string. You use backticks for the entire string, and the dollar sign with brackets for the variable.
+Interpolation is where you use one string as a variable within another string. Use backticks for the entire string, and put a dollar sign with curly brackets around the variable.
+
 ```js
 let hello = "Hello"
 
@@ -343,25 +362,31 @@ let hello_world = `${hello} world`
 
 There are also a bunch of **methods** you can run on strings.
 
+**.search()**: find the starting index of a string value. String indexes are 0-based, so the index of a string's first character is 0.
+
 ```js
-// .search(): find the starting index of a string value.
-// String indexes are 0-based, so the index of a string's first character is 0.
 var greetings = "Hi there friend!"
 greetings.search("friend")
+```
 
-// .substr(): return and store a portion of a string.
-// First argument is the start position, second argument is length of section you copy
+**.substr()**: return and store a portion of a string. First argument is the start position; second argument is the length of the section you copy.
+
+```js
 var buddy = greetings.substr(9, 6)
+```
 
-// .slice(): returns a copy of a section of a string.
-// First argument is the start position, second argument is the end position
+**.slice()**: returns a copy of a section of a string. First argument is the start position; second argument is the end position.
+
+```js
 var buddy = greetings.slice(9, 14)
 ```
+
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) are a bunch more examples.
 
 #### Escape sequences
 
 Sometimes you will need to use special characters or formatting in strings that can't be entered the same way as you would in a word processor. In these cases, you use "escape sequences".
+
 - Syntax: backslash + letter (e.g., `"\n"`).
 
 ```js
@@ -388,11 +413,13 @@ Sometimes you will need to use special characters or formatting in strings that 
 ## Break (10 minutes / 11:40)
 
 ## Booleans (10 minutes / 11:50)
-These are the most simple JavaScript data type. They can have the values `true` or `false`
+
+These are the most simple JavaScript data type. They can have the values `true` or `false`.
 
 ### Comparison Operators (10 minutes / 12:00)
 
 We encounter booleans most often when comparing two values using comparison operators like...
+
 * `==` - equal (in value)
 * `===` - equal (in value and data type)
 * `!=` - not equal (in value)
@@ -403,8 +430,11 @@ We encounter booleans most often when comparing two values using comparison oper
 * `>=` - greater than or equal to
 
 What is the difference between `==` and `===`?
+
 * `===` checks for both the data type and value.
 * `==` only checks for value.
+
+Comparison operators return a boolean value.
 
 ```js
 1 == 1
@@ -425,45 +455,60 @@ What is the difference between `==` and `===`?
 // This time, Javascript does care about data types because we are using `===`. Because the left side is a Number and the right side is a String, this evaluates to false.
 ```
 
-Here's an example truth table for the `!` (not) operation. In it, we're listing the values of `!a` that correspond with a given value of `a`.
+#### Logical Operators
 
-|a|!a|
-|---|---|
-|true|false|
-|false|true|
+Logical operators are used to determine the logic between values or variables. There are three main logical operators:
 
-Fill out the truth tables below for `&&` (and), `||` (or) and one that uses multiple comparison operators. All you need to do is replace the `?`'s with either `true` or `false`.
+- `!`
+- `&&`
+- `||`
+
+`!` is an operator that means 'not'. For example, `!==` means 'not equal'.
+
+<details>
+	<summary>Given a variable `a` equals `true`, what does `!a` evaluate to?</summary>
+	`false`
+</details>
+
+<details>
+	<summary>Given a variable `!a` equals `true`, what does `a` evaluate to?</summary>
+	`false`
+</details>
+
+`&&` operates as 'AND' and `||` operates as 'OR'
+
+####You Do (5 minutes / 12:05)
+
+Given this, take 5 minutes to fill out the truth tables below.
 
 > **NOTE:** Because of markdown formatting, `||` and `&&` have been replaced with `OR` and `AND` respectively.
->
-> **HINT:** With the last one, it may be helpful to add additional columns to the table for each individual comparison.
 
 | a | b | a AND b |
 | --- | --- | --- |
-| true | true | ? |
-| true | false | ? |
-| false | true | ? |
-| false | false | ? |
+| true | true |
+| true | false |
+| false | true |
+| false | false |
 
 |a|b|a OR b|
 |---|---|---|
-|true|true|?|
-|true|false|?|
-|false|true|?|
-|false|false|?|
+|true|true|
+|true|false|
+|false|true|
+|false|false|
 
 |a|b|a `!=` b|
 |---|---|---|
-|3|3|?|
-|1|5|?|
-|2|"2"|?|
+|3|3|
+|1|5|
+|2|"2"|
 
 |a|b|!a AND (a OR b)|
 |---|---|---|
-|true|true|?|
-|true|false|?|
-|false|true|?|
-|false|false|?|
+|true|true|
+|true|false|
+|false|true|
+|false|false|
 
 ## Type Conversion (5 minutes / 12:10)
 
@@ -528,7 +573,7 @@ Javascript will try to make sense of any strange operations you throw at it.
 - Examples of "strange": subtracting a number from a string, multiplying `null` by 100
 - It does this by converting data types using a process called "type coercion"
 
-You might encounter this when dealing with numerical values but for whatever reason some of them are in string form.
+You might encounter this when dealing with numerical values in string form.
 
 ```js
 // In some cases Javascript is helpful and converts strings to numbers in the correct way.
@@ -555,17 +600,16 @@ parseInt("burrito")
 // => NaN, because "burrito" cannot be converted into a number
 ```
 
-There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will fire weird results back at you with no explanation. Sometimes, type coercion might be the culprit.
+There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will yield weird results with no explanation - and it may be due to type coercion.
 
 ## Arrays (15 minutes / 12:25)
 
-Arrays are ordered collection of related data types and are organized by index.
+Arrays are an ordered collection of related data types and are organized by index.
 - Indexing begins at 0 (e.g., first element in an array has an index of 0, the second has an index of 1, and so on).
 
 We instantiate an array like this...
 
 ```js
-// Instantiate with an array literal.
 var mountRushmore = [ "Washington", "Jefferson", "Roosevelt" ]
 ```
 
@@ -586,11 +630,15 @@ mountRushmore.push("Lincoln")
 
 mountRushmore[3]
 // returns "Lincoln"
+```
+You can also place arrays within arrays.
 
-// You can also place arrays within arrays.
+```js
 var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
+```
+How would we go about accessing the letter "f" in the above array?
 
-// How would we go about accessing the letter "f" in the above array?
+```js
 letters[1][2]
 // => "f"
 ```
@@ -711,15 +759,8 @@ console.log(third)
 - [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
 - [Eloquent JavaScript](http://eloquentjavascript.net/)
 
-## Bonus: Linting
+## Bonus: Linters
 
-- Install [Linter](https://github.com/steelbrain/linter)
-- Install [linter-js-standard](https://github.com/ricardofbarros/linter-js-standard)
-- Install [atom-standard-formatter](https://github.com/stephenkubovic/atom-standard-formatter)
-- Install [standardjs-snippets](https://github.com/gaboesquivel/atom-standardjs-snippets)
-
-The errors we get in the linter might be confusing at first.
-There is a standard list of rules [here](https://standardjs.com/rules.html).
-The errors for the most part should be understandable plain English but if the meaning of an error isn't clear, google "Standard JS [Error Message Here]".
-
-To use the formatter press `ctrl-alt-f` and the formatter will correct any errors it can in your file.
+- Install [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatter)
+- Install [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
+- Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
