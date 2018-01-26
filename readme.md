@@ -123,31 +123,11 @@ Another example of a REPL is: https://repl.it/. This may be a helpful tool to us
 #### Try it together (5 minutes / 10:25)
 
 1. Print out your name in the console.
-2. Print out the sum of 1 to 10.
+2. Print out the sum of 1 to 15.
 3. Type in the following code:
 ```
   console.log("I'm a " + "programmer")
 ```
-
-### `debugger` (5 minutes / 10:30)
-
-`debugger` is like another developer tool. Where `console.log` leaves us a little evidence about what's going on in the program execution, debugger puts the process on hold and lets us look at any part of the paused process.
-It then lets you walk through your script step by step.
-
-```js
-let greeting = "Hello"
-let subject = "World"
-debugger;
-let message = `${greeting}, ${subject}!`
-console.log(message)
-let messageParts = message.split(", ")
-```
-
-We don't actually need to have a `debugger` line and StandardJS doesn't like it.
-
-Instead we can set breakpoints directly through the developer tools. More information on debugging with Chrome Dev Tools is available [here](https://developers.google.com/web/tools/chrome-devtools/javascript/).
-
-You can also [debug using VS Code](https://code.visualstudio.com/docs/editor/debugging)!
 
 ## Syntax (10 minutes / 10:40)
 
@@ -349,7 +329,7 @@ In order to join multiple strings together, you can use **concatenation** or **i
 
 Concatenation is when you add multiple strings together.
 ```js
-let hello_world = "Hello" + "world"
+let helloWorld = "Hello" + "world"
 ```
 
 Interpolation is where you use one string as a variable within another string. Use backticks for the entire string, and put a dollar sign with curly brackets around the variable.
@@ -357,7 +337,7 @@ Interpolation is where you use one string as a variable within another string. U
 ```js
 let hello = "Hello"
 
-let hello_world = `${hello} world`
+let helloWorld = `${hello} world`
 ```
 
 There are also a bunch of **methods** you can run on strings.
@@ -404,7 +384,7 @@ Sometimes you will need to use special characters or formatting in strings that 
 
 #### You Do (5 minutes / 11:30)
 * Write two variables in JavaScript, one with your first name and one with your last name.
-* Use string interpolation to add your first name to your last name and store that in a variable with your full name.
+* Use string concatenation to add your first name to your last name and store that in a variable with your full name.
 * Get the first letter of your name using a string method.
 * Write your address using proper spacing in JavaScript.
 * Get just your first name from your name.
@@ -429,10 +409,12 @@ We encounter booleans most often when comparing two values using comparison oper
 * `<=` - less than or equal to
 * `>=` - greater than or equal to
 
-What is the difference between `==` and `===`?
+<details>
+  <summary>What is the difference between `==` and `===`?</summary>
 
 * `===` checks for both the data type and value.
 * `==` only checks for value.
+</details>
 
 Comparison operators return a boolean value.
 
@@ -475,9 +457,11 @@ Logical operators are used to determine the logic between values or variables. T
 	`false`
 </details>
 
+
+
 `&&` operates as 'AND' and `||` operates as 'OR'
 
-####You Do (5 minutes / 12:05)
+#### You Do (5 minutes / 12:05)
 
 Given this, take 5 minutes to fill out the truth tables below.
 
@@ -636,12 +620,15 @@ You can also place arrays within arrays.
 ```js
 var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
 ```
-How would we go about accessing the letter "f" in the above array?
 
-```js
-letters[1][2]
-// => "f"
-```
+<details>
+	<summary>How would we go about accessing the letter "f" in the above array?</summary>
+	
+	```js
+	letters[1][2]
+	// => "f"
+	```
+</details>
 
 ### Array Methods
 
@@ -657,8 +644,6 @@ There are a lot of useful methods that come with Javascript we can use to inspec
 1. Write an array that contains the names of the people at your row.
 2. Get the index of your name in that array (using an array method).
 3. Add the person in front of you to the array (using an array method).
-4. Use an array method to get the first two people in the row.
-5. Use an array method we haven't yet seen in class to manipulate the array.
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is more documentation on arrays.
 
