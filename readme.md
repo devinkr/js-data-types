@@ -12,7 +12,7 @@ Today we are going to get started with our first real programming language of th
 
 ## Linking a JavaScript file (10 minutes / 10:15)
 
-We'll start by creating a new directory with html and JS files. From the command line:
+We'll start by creating a new directory with HTML and JS files. From the command line:
 
 ```shell
 $ cd ~/wdi/sandbox
@@ -23,6 +23,7 @@ $ code .
 ```
 
 Go into the HTML file and enter HTML boilerplate code:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -36,19 +37,20 @@ Go into the HTML file and enter HTML boilerplate code:
 </html>
 ```
 
-Next, we will link the JS file into the HTML file, by adding a script element into the ```head```, as follows:
+Next, we will link the JS file into the HTML file, by adding a script element into the bottom of the `body`, as follows:
 
 In index.html:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="script.js"></script>
 </head>
 <body>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
 ```
@@ -60,6 +62,7 @@ console.log("hello world")
 ```
 
 Back at the command line run:
+
 ```shell
 $ open index.html
 ```
@@ -71,16 +74,19 @@ You can bring up the Development Tools (DevTools) with the command **Command + C
 ![DevTools Console says 'Hello World!'](https://user-images.githubusercontent.com/7882341/27314092-830ea8ac-553f-11e7-954f-c8502b382d6d.png)
 
 Again, back at the command line run:
+
 ```bash
 touch script2.js
 ```
 
 In script2.js add:
+
 ```js
 console.log("hello world, from script2")
 ```
 
-In index.html, in the head after the other script tag, add:
+In index.html, in the body after the other script tag, add:
+
 ```html
 ...
   <script src="script2.js"></script>
@@ -89,7 +95,15 @@ In index.html, in the head after the other script tag, add:
 
 Go back to the browser and refresh the page.
 
+### Other ways to link a file:
+
+Depending on when you want the JavaScript to load, the `script` tag can also be placed in the `head` section, generally just after the title.
+
+Placing the script at the bottom of the `body` allows your HTML to load first, then it downloads and executes your JS file. But if any of your HTML depends on JS in your script file, you'll want it placed in the head, or at least before that HTML is rendered. For now, you can default to placing your script at the end the `body`.
+
 **Bonus Reading:** [async and defer attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+
+It is also possible to write JavaScript directly into your HTML file within the `script` tags, but keeping all JS in a separate file makes it easier to edit and more efficient when loading the page.
 
 ## Developer Tools (5 minutes / 10:20)
 
@@ -108,7 +122,7 @@ The console is also known as a REPL (Read-Eval-Print-Loop). When you hit **Enter
 3. **P**rint the value that was evaluated (`42`).
 4. **L**oop, returning control to the user and wait to be asked to read the next line.
 
-Let's try it out. In your script.js file, type:
+Let's try it out. In your script.js file:
 
 ```js
 const number = 2
@@ -119,15 +133,6 @@ console.log(number)
 Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `2`. 
 
 Another example of a REPL is: https://repl.it/. This may be a helpful tool to use throughout class to test code.
-
-#### Try it together (5 minutes / 10:25)
-
-1. Print out your name in the console.
-2. Print out the sum of 1 to 15.
-3. Type in the following code:
-```
-  console.log("I'm a " + "programmer")
-```
 
 ## Syntax (10 minutes / 10:40)
 
@@ -143,7 +148,7 @@ Another example of a REPL is: https://repl.it/. This may be a helpful tool to us
 
 ### camelCase
 
-Javascript variables and function names are written using camel case syntax. That works
+JavaScript variables and function names are written using camel case syntax. That works
 - First letter of first word lowercase
 - First letter of remaining words uppercase
 - No spaces or punctuation between words
@@ -188,7 +193,7 @@ Simply defined, a primitive data type is one that represents a single value. In 
 
 ### Numbers (10 minutes / 11:00)
 
-Numbers are simply represented by their digits. In JS `4`, `13`, `-3`, `2.5` and `10e3` all mean just what you would expect.
+Numbers are simply represented by their digits. In JS, `4`, `13`, `-3`, `2.5` and `10e3` all mean just what you would expect.
 To create a number in JS, just write it.
 
 In your browser console, type `42` and hit **Enter**.
@@ -287,7 +292,7 @@ let unassigned
 console.log(unassigned)
 ```
 
-Once we have a declared variable, we can change its value. Here are some examples of both assigning our `unassigned` variable
+Once we have a declared variable, we can change its value. Here are some examples:
 
 ```js
 unassigned = 'assigned now'
@@ -298,7 +303,7 @@ doubleSum = doubleSum + 1
 doubleSum += 1
 ```
 
-Javascript is a "dynamically-typed" language, meaning a variable can switch between data types. The following change is valid.
+JavaScript is a "dynamically-typed" language, meaning a variable can switch between data types. The following change is valid.
 
 ```js
 var myFavoriteNumber = 5
@@ -328,6 +333,7 @@ Strings are how JavaScript represents text. They are a series of characters in s
 In order to join multiple strings together, you can use **concatenation** or **interpolation**.
 
 Concatenation is when you add multiple strings together.
+
 ```js
 let helloWorld = "Hello" + "world"
 ```
@@ -358,7 +364,7 @@ var buddy = greetings.substr(9, 6)
 **.slice()**: returns a copy of a section of a string. First argument is the start position; second argument is the end position.
 
 ```js
-var buddy = greetings.slice(9, 14)
+var buddy = greetings.slice(9, 15)
 ```
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) are a bunch more examples.
@@ -384,17 +390,17 @@ Sometimes you will need to use special characters or formatting in strings that 
 
 #### You Do (5 minutes / 11:30)
 * Write two variables in JavaScript, one with your first name and one with your last name.
-* Use string concatenation to add your first name to your last name and store that in a variable with your full name.
+* Use string interpolation to add your first name and your last name to a new variable for your full name.
 * Get the first letter of your name using a string method.
 * Write your address using proper spacing in JavaScript.
-* Get just your first name from your name.
+* Get just your first name from your full name variable.
 * Use a string method we haven't learned yet to do something else to your name!
 
 ## Break (10 minutes / 11:40)
 
 ## Booleans (10 minutes / 11:50)
 
-These are the most simple JavaScript data type. They can have the values `true` or `false`.
+This is the most simple JavaScript data type. They can have the values `true` or `false`.
 
 ### Comparison Operators (10 minutes / 12:00)
 
@@ -553,14 +559,15 @@ typeof(1 != 2)
 // Actual:
 ```
 
-Javascript will try to make sense of any strange operations you throw at it.
-- Examples of "strange": subtracting a number from a string, multiplying `null` by 100
-- It does this by converting data types using a process called "type coercion"
+JavaScript will try to make sense of any strange operations you throw at it.
+
+- Examples of "strange": subtracting a number from a string, multiplying `null` by 100.
+- It does this by converting data types using a process called type coercion.
 
 You might encounter this when dealing with numerical values in string form.
 
 ```js
-// In some cases Javascript is helpful and converts strings to numbers in the correct way.
+// In some cases JavaScript is helpful and converts strings to numbers in the correct way.
 "3" - "2"
 // => 1
 
@@ -584,7 +591,7 @@ parseInt("burrito")
 // => NaN, because "burrito" cannot be converted into a number
 ```
 
-There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will yield weird results with no explanation - and it may be due to type coercion.
+There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes JavaScript will yield weird results with no explanation - and it may be due to type coercion.
 
 ## Arrays (15 minutes / 12:25)
 
@@ -632,7 +639,7 @@ var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
 
 ### Array Methods
 
-There are a lot of useful methods that come with Javascript we can use to inspect and modify arrays. To learn what some of them are...
+There are a lot of useful methods that come with JavaScript we can use to inspect and modify arrays. To learn what some of them are...
 * `.length`
 * `.push`
 * `.indexOf`
