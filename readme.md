@@ -125,12 +125,12 @@ The console is also known as a REPL (Read-Eval-Print-Loop). When you hit **Enter
 Let's try it out. In your script.js file:
 
 ```js
-const number = 2
+const number = 9
 
 console.log(number)
 
 ```
-Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `2`. 
+Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `9`. 
 
 Another example of a REPL is: https://repl.it/. This may be a helpful tool to use throughout class to test code.
 
