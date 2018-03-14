@@ -684,8 +684,9 @@ arr2
 // => [1, 2]
 ```
 
-The spread operator makes it really easy to deep copy arrays in JavaScript, or create a new array with the same values as the old one:
+The ES6 spread operator makes it really easy to deep copy arrays in JavaScript, or create a new array with the same values as the old one.
 ```js
+
 let arr = [1, 2, 3]
 let arr2 = [...arr]
 
@@ -695,6 +696,14 @@ arr
 
 arr2
 // => [1, 2]
+```
+
+We can also copy arrays using the `.slice()` array method. 
+
+```js
+//ES5 Style
+var arr = [1, 2, 3]
+var arr2 = arr.slice()
 ```
 
 #### Destructuring Arrays
