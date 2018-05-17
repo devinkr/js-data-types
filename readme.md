@@ -1,6 +1,7 @@
 # Introduction to JavaScript: Data Types
 
 ## Learning Objectives
+
 * Start using JavaScript and use developer tools.
 * Introduce the syntax of the JavaScript language.
 * Work with the primitive data types in JavaScript.
@@ -14,12 +15,12 @@ Today we are going to get started with our first real programming language of th
 
 We'll start by creating a new directory with HTML and JS files. From the command line:
 
-```shell
-$ cd ~/wdi/sandbox
-$ mkdir js-data-types
-$ cd js-data-types
-$ touch index.html script.js
-$ code .
+```sh
+cd ~/wdi/sandbox
+mkdir js-data-types
+cd js-data-types
+touch index.html script.js
+code .
 ```
 
 Go into the HTML file and enter HTML boilerplate code:
@@ -63,8 +64,8 @@ console.log("hello world")
 
 Back at the command line run:
 
-```shell
-$ open index.html
+```sh
+open index.html
 ```
 
 Your default browser will open (we ask for this class you use Chrome but other browsers will have similar tools you should definitely explore).
@@ -75,7 +76,7 @@ You can bring up the Development Tools (DevTools) with the command **Command + C
 
 Again, back at the command line run:
 
-```bash
+```sh
 touch script2.js
 ```
 
@@ -88,14 +89,12 @@ console.log("hello world, from script2")
 In index.html, in the body after the other script tag, add:
 
 ```html
-...
   <script src="script2.js"></script>
-...
 ```
 
 Go back to the browser and refresh the page.
 
-### Other ways to link a file:
+### Other ways to link a file
 
 Depending on when you want the JavaScript to load, the `script` tag can also be placed in the `head` section, generally just after the title.
 
@@ -128,30 +127,32 @@ Let's try it out. In your script.js file:
 const number = 9
 
 console.log(number)
-
 ```
-Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `9`. 
 
-Another example of a REPL is: https://repl.it/. This may be a helpful tool to use throughout class to test code.
+Go back to the browser, and refresh the page. Type `number` into the console. It will read, evaluate, and print `9`.
+
+Another example of a REPL is: [https://repl.it/](https://repl.it/). This may be a helpful tool to use throughout class to test code.
 
 ## Syntax (10 minutes / 10:40)
 
 ### Semicolons
-- Semicolons can be put at the end of each line.
-- We don't recommend using them, but if you do be consistent!
-- The only catch with not using semicolons is that you can't start a line of code with `(`, `[`, or a backtick (`). 
-- References:
-    - [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
-    - [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
-    - [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
-    - [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
+
+* Semicolons can be put at the end of each line.
+* We don't recommend using them, but if you do be consistent!
+* The only catch with not using semicolons is that you can't start a line of code with `(`, `[`, or a backtick (`).
+* References:
+    * [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
+    * [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
+    * [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
+    * [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
 
 ### camelCase
 
 JavaScript variables and function names are written using camel case syntax. That works
-- First letter of first word lowercase
-- First letter of remaining words uppercase
-- No spaces or punctuation between words
+
+* First letter of first word lowercase
+* First letter of remaining words uppercase
+* No spaces or punctuation between words
 
 #### Examples
 
@@ -183,6 +184,7 @@ Keyboard shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 ## Break (10 minutes / 10:55)
 
 ## Primitive Data Types in JavaScript
+
 Simply defined, a primitive data type is one that represents a single value. In JavaScript there are five primitive types:
 
 1. Numbers
@@ -218,7 +220,7 @@ You can also do math in JavaScript. Type `42 + 3` into the console and see what 
 // => 5
 ```
 
-- You can find a full list of arithmetic operators [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
+* You can find a full list of arithmetic operators [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
 
 #### % (Modulus)
 
@@ -247,6 +249,7 @@ A special number...that's not a number?
 typeof NaN
 // => Number
 ```
+
 `NaN` is the return value from operations which have an undefined numerical result (e.g. dividing 0 by 0, multiplying strings together).
 
 ```js
@@ -325,7 +328,6 @@ myFavoriteNumber
 
 In summary, the difference is that `undefined` implies nothing because it never was anything while `null` implies explicitly set to nothing.
 
-
 ## Strings (10 minutes / 11:25)
 
 Strings are how JavaScript represents text. They are a series of characters in single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are all examples of strings in JavaScript.
@@ -369,11 +371,11 @@ var buddy = greetings.slice(9, 15)
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) are a bunch more examples.
 
-#### Escape sequences
+### Escape sequences
 
 Sometimes you will need to use special characters or formatting in strings that can't be entered the same way as you would in a word processor. In these cases, you use "escape sequences".
 
-- Syntax: backslash + letter (e.g., `"\n"`).
+* Syntax: backslash + letter (e.g., `"\n"`).
 
 ```js
 // "\n" = new line
@@ -386,9 +388,10 @@ Sometimes you will need to use special characters or formatting in strings that 
 // returns "     Once upon a time..."
 ```
 
-> You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).  
+> You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).
 
 #### You Do (5 minutes / 11:30)
+
 * Write two variables in JavaScript, one with your first name and one with your last name.
 * Use string interpolation to add your first name and your last name to a new variable for your full name.
 * Get the first letter of your name using a string method.
@@ -420,6 +423,7 @@ We encounter booleans most often when comparing two values using comparison oper
 
 * `===` checks for both the data type and value.
 * `==` only checks for value.
+
 </details>
 
 Comparison operators return a boolean value.
@@ -447,23 +451,21 @@ Comparison operators return a boolean value.
 
 Logical operators are used to determine the logic between values or variables. There are three main logical operators:
 
-- `!`
-- `&&`
-- `||`
+* `!`
+* `&&`
+* `||`
 
 `!` is an operator that means 'not'. For example, `!==` means 'not equal'.
 
 <details>
-	<summary>Given a variable `a` equals `true`, what does `!a` evaluate to?</summary>
-	`false`
+<summary>Given a variable `a` equals `true`, what does `!a` evaluate to?</summary>
+`false`
 </details>
 
 <details>
-	<summary>Given a variable `!a` equals `true`, what does `a` evaluate to?</summary>
-	`false`
+<summary>Given a variable `!a` equals `true`, what does `a` evaluate to?</summary>
+`false`
 </details>
-
-
 
 `&&` operates as 'AND' and `||` operates as 'OR'
 
@@ -561,8 +563,8 @@ typeof(1 != 2)
 
 JavaScript will try to make sense of any strange operations you throw at it.
 
-- Examples of "strange": subtracting a number from a string, multiplying `null` by 100.
-- It does this by converting data types using a process called type coercion.
+* Examples of "strange": subtracting a number from a string, multiplying `null` by 100.
+* It does this by converting data types using a process called type coercion.
 
 You might encounter this when dealing with numerical values in string form.
 
@@ -596,7 +598,8 @@ There are other examples of type coercion, but the point here isn't to remember 
 ## Arrays (15 minutes / 12:25)
 
 Arrays are an ordered collection of related data types and are organized by index.
-- Indexing begins at 0 (e.g., first element in an array has an index of 0, the second has an index of 1, and so on).
+
+* Indexing begins at 0 (e.g., first element in an array has an index of 0, the second has an index of 1, and so on).
 
 We instantiate an array like this...
 
@@ -622,6 +625,7 @@ mountRushmore.push("Lincoln")
 mountRushmore[3]
 // returns "Lincoln"
 ```
+
 You can also place arrays within arrays.
 
 ```js
@@ -629,17 +633,19 @@ var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
 ```
 
 <details>
-	<summary>How would we go about accessing the letter "f" in the above array?</summary>
-	
-	```js
-	letters[1][2]
-	// => "f"
-	```
+<summary>How would we go about accessing the letter "f" in the above array?</summary>
+
+```js
+letters[1][2]
+// => "f"
+```
+
 </details>
 
 ### Array Methods
 
 There are a lot of useful methods that come with JavaScript we can use to inspect and modify arrays. To learn what some of them are...
+
 * `.length`
 * `.push`
 * `.indexOf`
@@ -648,14 +654,15 @@ There are a lot of useful methods that come with JavaScript we can use to inspec
 > There are many more, but these are the most widely-used.
 
 #### You Do: Array Practice
+
 1. Write an array that contains the names of the people at your row.
 2. Get the index of your name in that array (using an array method).
 3. Add the person in front of you to the array (using an array method).
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is more documentation on arrays.
 
-
 #### The Spread Operator
+
 The spread operator `...` allows an expression to be expanded into multiple elements.
 
 This is useful for separating an array into individual elements...
@@ -671,7 +678,9 @@ console.log(...dimensions)
 ```
 
 #### Copying Arrays
+
 Variables in JavaScript only store references to arrays rather than the array itself. Therefore, if we do something like the following, both arrays will be impacted.
+
 ```js
 let arr = [1, 2, 3]
 let arr2 = arr
@@ -685,8 +694,8 @@ arr2
 ```
 
 The ES6 spread operator makes it really easy to deep copy arrays in JavaScript, or create a new array with the same values as the old one.
-```js
 
+```js
 let arr = [1, 2, 3]
 let arr2 = [...arr]
 
@@ -698,7 +707,7 @@ arr2
 // => [1, 2]
 ```
 
-We can also copy arrays using the `.slice()` array method. 
+We can also copy arrays using the `.slice()` array method.
 
 ```js
 //ES5 Style
@@ -756,12 +765,13 @@ console.log(third)
 ## Closing
 
 ## Additional Practice + Resources
-- [Khan Academy Intro to Programming JS](https://www.khanacademy.org/computing/computer-programming/programming#intro-to-programming)
-- [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
-- [Eloquent JavaScript](http://eloquentjavascript.net/)
+
+* [Khan Academy Intro to Programming JS](https://www.khanacademy.org/computing/computer-programming/programming#intro-to-programming)
+* [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
+* [Eloquent JavaScript](http://eloquentjavascript.net/)
 
 ## Bonus: Linters
 
-- Install [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatter)
-- Install [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
-- Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* Install [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatter)
+* Install [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
+* Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
