@@ -62,7 +62,7 @@ In index.html:
 ```
 
 Once the file is linked, we can go into our JS file and begin coding. In
-script.js:
+`script.js`:
 
 ```js
 console.log("hello world")
@@ -78,7 +78,7 @@ Your default browser will open (we ask for this class you use Chrome but other
 browsers will have similar tools you should definitely explore).
 
 You can bring up the Development Tools (DevTools) with the command **Command +
-Ctrl + J** (`⌘ + ⌥ + J`) and should see:
+Option + J** (`⌘ + ⌥ + J`) and should see something that looks like this:
 
 ![DevTools Console says 'Hello World!'](https://user-images.githubusercontent.com/7882341/27314092-830ea8ac-553f-11e7-954f-c8502b382d6d.png)
 
@@ -184,9 +184,9 @@ var isThisVariableCamelCase = true
 ```
 
 > Note: Other types: kebab-case, which separates words with dashes `-`s, and
-> snake case, which uses underscores. Use kebab case for HTML classes because
-> CSS is case insensitive so camelCase could give you issues. snake case is used
-> in programming languages like Ruby.
+> snake case, which uses underscores. Use kebab case for CSS classes because
+> CSS is case insensitive so camelCase could give you issues. Snake case is used
+> in programming languages like Python.
 
 ### Comments
 
@@ -296,11 +296,11 @@ You can test whether a value is a valid number using the `isNaN()` function. The
 method will return false if the argument passed into it is a valid number.
 
 ```js
-var myFavoriteNumber = 5
+const myFavoriteNumber = 5
 isNaN(myFavoriteNumber)
 // => false, because 5 is valid
 
-var myUnrealNumber = 0/0
+const myUnrealNumber = 0/0
 isNaN(myUnrealNumber)
 // => true, because 0 divided by 0 is NaN
 ```
@@ -314,8 +314,7 @@ In order to **declare** a variable in JavaScript we use the keywords `var`,
 `const`, and `let`. The original declaration keyword was `var`, but in newer
 versions of JavaScript `const` and `let` were implemented. `const` is used on
 variables that will not be changed in your JavaScript code. `let` is used for
-variables that do change. People tend to use either `var` for everything or
-`const` and `let` consistently.
+variables that do change.
 
 Most of the time, we want our variables to immediately store a value. Therefore,
 we **assign** values to our variables when we declare them. Here are three
@@ -345,11 +344,8 @@ examples:
 
 ```js
 unassigned = 'assigned now'
-console.log(assigned)
-
-doubleSum = doubleSum + 1
-// or
-doubleSum += 1
+console.log(unassigned)
+// => 'assigned now'
 ```
 
 JavaScript is a "dynamically-typed" language, meaning a variable can switch
@@ -393,9 +389,9 @@ Concatenation is when you add multiple strings together.
 let helloWorld = "Hello" + "world"
 ```
 
-Interpolation is where you use one string as a variable within another string.
-Use backticks for the entire string, and put a dollar sign with curly brackets
-around the variable.
+Interpolation is where you reference a variable within a string. Use back ticks
+for the entire string, and put a dollar sign with curly brackets around the
+variable.
 
 ```js
 let hello = "Hello"
@@ -459,7 +455,7 @@ you use "escape sequences".
 * Use string interpolation to add your first name and your last name to a new
   variable for your full name.
 * Get the first letter of your name using a string method.
-* Write your address using proper spacing in JavaScript.
+* Write your address using proper spacing in JavaScript (Hint: Escape Sequence).
 * Get just your first name from your full name variable.
 * Use a string method we haven't learned yet to do something else to your name!
 
@@ -570,7 +566,7 @@ Given this, take 5 minutes to fill out the truth tables below.
 |false|true|
 |false|false|
 
-## Type Conversion (5 minutes / 12:10)
+## You Do: Type Conversion (5 minutes / 12:10)
 
 With the person next to you, spend five minutes on the following activity.
 First, predict what the line of code will do, next run the code in your REPL and
@@ -670,8 +666,7 @@ no explanation - and it may be due to type coercion.
 
 ## Arrays (15 minutes / 12:25)
 
-Arrays are an ordered collection of related data types and are organized by
-index.
+Arrays are an ordered collection of related data and are organized by index.
 
 * Indexing begins at 0 (e.g., first element in an array has an index of 0, the
   second has an index of 1, and so on).
@@ -679,7 +674,7 @@ index.
 We instantiate an array like this...
 
 ```js
-var mountRushmore = [ "Washington", "Jefferson", "Roosevelt" ]
+const mountRushmore = [ "Washington", "Jefferson", "Roosevelt" ]
 ```
 
 And access its values like so...
@@ -704,7 +699,7 @@ mountRushmore[3]
 You can also place arrays within arrays.
 
 ```js
-var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
+const letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
 ```
 
 <details>
@@ -723,7 +718,8 @@ There are a lot of useful methods that come with JavaScript we can use to
 inspect and modify arrays. To learn what some of them are...
 
 * `.length`
-* `.push`
+* `.push` / `.pop`
+* `.shift` / `.unshift`
 * `.indexOf`
 * `.reverse`
 
@@ -731,12 +727,11 @@ inspect and modify arrays. To learn what some of them are...
 
 #### You Do: Array Practice
 
-1. Write an array that contains the names of the people at your row.
+1. Write an array that contains the names of the people in your row.
 2. Get the index of your name in that array (using an array method).
 3. Add the person in front of you to the array (using an array method).
 
-[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-is more documentation on arrays.
+[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is more documentation on arrays.
 
 #### The Spread Operator
 
