@@ -7,14 +7,16 @@
 * Work with the primitive data types in JavaScript.
 * Start working with arrays in JavaScript.
 
-## Intro (5 minutes / 10:05)
+## Intro (5 minutes / 0:05)
 
 Today we are going to get started with our first real programming language of
 the course! We've learned about HTML + CSS in previous classes this week, so we
 know how to make static webpages where there isn't much user interaction. Today
 we are going to move towards making our pages interactive and dynamic.
 
-## Linking a JavaScript file (10 minutes / 10:15)
+But first, we must start with the basics.
+
+## Linking a JavaScript file (10 minutes / 0:15)
 
 We'll start by creating a new directory with HTML and JS files. From the command
 line:
@@ -94,24 +96,29 @@ In script2.js add:
 console.log("hello world, from script2")
 ```
 
-In index.html, in the body after the other script tag, add:
+In index.html, in the head, add:
 
 ```html
-  <script src="script2.js"></script>
+  <script defer src="script2.js"></script>
+```
+
+Now let's do it a third time!
+
+Create a `script3.js` and include it in head, this time without a `defer` attribute.
+
+```html
+  <script src="script3.js"></script>
 ```
 
 Go back to the browser and refresh the page.
 
-### Other ways to link a file
+### Many ways to link a file
 
-Depending on when you want the JavaScript to load, the `script` tag can also be
-placed in the `head` section, generally just after the title.
+Placing the script at the bottom of the `body` allows your HTML to load first, then it downloads and executes your JS file.
 
-Placing the script at the bottom of the `body` allows your HTML to load first,
-then it downloads and executes your JS file. But if any of your HTML depends on
-JS in your script file, you'll want it placed in the head, or at least before
-that HTML is rendered. For now, you can default to placing your script at the
-end the `body`.
+Putting `defer` on your script tag in the head executes it after the entire page has loaded.
+
+Placing a plain old script tag in the head, that doesn't have any attributes on it, runs the script before html loads. If you do this make sure that your script doesn't depend on HTML already being there.
 
 **Bonus Reading:** [async and defer attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
@@ -119,7 +126,7 @@ It is also possible to write JavaScript directly into your HTML file within the
 `script` tags, but keeping all JS in a separate file makes it easier to edit and
 more efficient when loading the page.
 
-## Developer Tools (5 minutes / 10:20)
+## Developer Tools (5 minutes / 0:20)
 
 ### `console.log`
 
@@ -153,81 +160,101 @@ will read, evaluate, and print `9`.
 Another example of a REPL is: [https://repl.it/](https://repl.it/). This may be
 a helpful tool to use throughout class to test code.
 
-## Syntax (10 minutes / 10:40)
-
-### Semicolons
-
-* Semicolons can be put at the end of each line.
-* We don't recommend using them, but if you do be consistent!
-* The only catch with not using semicolons is that you can't start a line of
-  code with `(`, `[`, or a backtick (`).
-* References:
-    * [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
-    * [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
-    * [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
-    * [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
-
-### camelCase
-
-JavaScript variables and function names are written using camel case syntax.
-That works
-
-* First letter of first word lowercase
-* First letter of remaining words uppercase
-* No spaces or punctuation between words
-
-#### Examples
-
-```js
-var pizzaTopping = "pepperoni"
-var isThisVariableCamelCase = true
-```
-
-> Note: Other types: kebab-case, which separates words with dashes `-`s, and
-> snake case, which uses underscores. Use kebab case for CSS classes because
-> CSS is case insensitive so camelCase could give you issues. Snake case is used
-> in programming languages like Python.
-
-### Comments
-
-Comments are an extremely important part of writing code. They help us make
-sense of our code, especially for other people reading our code, or when we have
-walked away from some code and have completely forgotten what certain sections
-of it do. This happens much more quickly than you may imagine.
-
-If you are working on a team, your documentation and commenting practices often
-translate to how easy you are to work with!
-
-```js
-// Single line comment
-
-/*
-  Multiple
-  line
-  comments
-*/
-```
 
 Keyboard shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 
-## Break (10 minutes / 10:55)
-
 ## Primitive Data Types in JavaScript
 
-Simply defined, a primitive data type is one that represents a single value. In
-JavaScript there are five primitive types:
+What do we mean when we say data types?
 
-1. Numbers
-2. Strings
+> Think of data types as ways of representing information.
+
+A primitive data type is one that represents a single value (as opposed to multiple values). In JavaScript there are five primitive types:
+
+1. Strings
+2. Numbers
 3. Booleans
 4. Undefined
 5. Null
 
-### Numbers (10 minutes / 11:00)
+## Strings (10 minutes / 0:30)
 
-Numbers are simply represented by their digits. In JS, `4`, `13`, `-3`, `2.5`
-and `10e3` all mean just what you would expect. To create a number in JS, just
+Strings are how JavaScript represents text. They are a series of characters in
+single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are
+all examples of strings in JavaScript.
+
+It doesn't matter whether you use double or single quotes, but if you need to include either a double or a single quote in your string, wrap it in the other type.
+
+Example: 
+`"What's the weather like today?"`
+`'This dude is really into "air quotes"'`
+
+In order to join multiple strings together, you can use **concatenation** or
+**interpolation**.
+
+Concatenation is when you add multiple strings together.
+
+```js
+let helloWorld = "Hello" + "world"
+```
+
+Interpolation is where you reference a variable within a string. Use back ticks
+for the entire string, and put a dollar sign with curly brackets around the
+variable.
+
+```js
+let hello = "Hello"
+
+let helloWorld = `${hello} world`
+```
+
+> You can totally use backticks without using interpolation as well, if you prefer.
+
+[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+are a bunch more examples.
+
+### String escape sequences
+
+Sometimes you will need to use special characters or formatting in strings that
+can't be entered the same way as you would in a word processor. In these cases,
+you use "escape sequences".
+
+* Syntax: backslash + letter (e.g., `"\n"`).
+
+```js
+// "\n" = new line
+"Hello\nGoodbye"
+// returns"Hello"
+// returns"Goodbye"
+
+// "\t" = tab
+"\tOnce upon a time..."
+// returns "     Once upon a time..."
+
+// You can also escape quotes
+"What's with this dude's \"air quotes\"? He's insane"
+// returns "What's with this dude's "air quotes"? He's insane"
+```
+
+> You can check out more escape sequence examples
+> [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).
+
+### You Do: String exercise
+
+* console.log 5 strings
+  - 1 that has double quotes
+  - 1 with single quotes
+  - 1 with double quotes and a single quote inside it
+  - 1 with single quotes and a double quote inside it
+  - 1 with escape characters
+
+## Numbers (10 minutes / 0:40)
+
+Numbers are simply represented by their digits. In JS, `4`, `345092318`, `-3`, `2.5`
+and `10e7` all mean just what you would expect. To create a number in JS, just
 write it.
+
+> If you write `"645"` is that a number?
 
 In your browser console, type `42` and hit **Enter**.
 
@@ -250,11 +277,14 @@ happens.
 // Division
 10 / 2
 // => 5
+
+// Exponents
+10 ** 2
 ```
 
 * You can find a full list of arithmetic operators [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
 
-#### % (Modulus)
+### % (Modulus)
 
 The modulus operator - `%` - returns the remainder of a division operation.
 
@@ -275,43 +305,88 @@ there should be no remainder).
 // => 1, so 5 is odd. When 5 is divided by 2, the remainder is 1.
 ```
 
-### NaN ("Not a number")
+## Booleans (5 minutes / 0:45)
 
-A special number...that's not a number?
+This is the most simple JavaScript data type. They can have the values `true` or
+`false`.
+
+> What's the difference between `'true'` and `true` ?
+
+### Comparison Operators (10 minutes / 0:55)
+
+We encounter booleans most often when comparing two values using comparison
+operators like...
+* `==` - equal (in value)
+* `===` - equal (in value and data type)
+* `!=` - not equal (in value)
+* `!==` - not equal (in value and data type)
+* `<` - less than
+* `>` - greater than
+* `<=` - less than or equal to
+* `>=` - greater than or equal to
+
+<details>
+  <summary>What is the difference between `==` and `===`?</summary>
+
+* `===` checks for both the data type and value.
+* `==` only checks for value.
+
+</details>
+
+Comparison operators return a boolean value.
 
 ```js
-typeof NaN
-// => Number
+1 == 1
+// Does 1 equal 1? Yes ==> true
+
+1 == 2
+// Does 1 equal 2? No ==> false
+
+1 === 1
+// Does 1 equal 1 AND are both values numbers? Yes ==> true
+
+1 == "1"
+// Does 1 equal 1? Yes ==> true
+// In this scenario, "1" is converted to a number then the values are compared.
+
+1 === "1"
+// Does 1 equal 1 AND are both values numbers? No ==> false
+// This time, Javascript does care about data types because we are using `===`. Because the left side is a Number and the right side is a String, this evaluates to false.
 ```
 
-`NaN` is the return value from operations which have an undefined numerical
-result (e.g. dividing 0 by 0, multiplying strings together).
+#### Logical Operators
 
-```js
-0/0
-// => NaN
-```
+Logical operators are used to determine the logic between values or variables.
+There are three main logical operators:
 
-You can test whether a value is a valid number using the `isNaN()` function. The
-method will return false if the argument passed into it is a valid number.
+* `!`
+* `&&`
+* `||`
 
-```js
-const myFavoriteNumber = 5
-isNaN(myFavoriteNumber)
-// => false, because 5 is valid
+`!` is an operator that means 'not'. For example, `!==` means 'not equal'.
 
-const myUnrealNumber = 0/0
-isNaN(myUnrealNumber)
-// => true, because 0 divided by 0 is NaN
-```
+<details>
+<summary>Given a variable `a` equals `true`, what does `!a` evaluate to?</summary>
+`false`
+</details>
 
-### Variables (10 minutes / 11:10)
+<details>
+<summary>Given a variable `!a` equals `true`, what does `a` evaluate to?</summary>
+`false`
+</details>
+
+`&&` operates as 'AND' and `||` operates as 'OR'
+
+
+## Break (10 min / 1:05)
+
+## Variables (10 min / 1:15)
 
 **Variables** are containers for information -- we can store any value in them.
 We can use them to help repeat, change, store, or edit our data.
 
 In order to **declare** a variable in JavaScript we use the keywords `var`,
-`const`, and `let`. The original declaration keyword was `var`, but in newer
+`const`, or `let`. The original declaration keyword was `var`, but in newer
 versions of JavaScript `const` and `let` were implemented. `const` is used on
 variables that will not be changed in your JavaScript code. `let` is used for
 variables that do change.
@@ -363,7 +438,7 @@ myFavoriteNumber
 // => "five"
 ```
 
-## Null + Undefined (5 minutes / 11:15)
+## Null + Undefined + NaN (5 minutes / 1:20)
 
 * If we declare a variable without assigning a value to it, it will, by default,
   have a value of `undefined`.
@@ -374,199 +449,95 @@ myFavoriteNumber
 In summary, the difference is that `undefined` implies nothing because it never
 was anything while `null` implies explicitly set to nothing.
 
-## Strings (10 minutes / 11:25)
+### NaN ("Not a number")
 
-Strings are how JavaScript represents text. They are a series of characters in
-single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are
-all examples of strings in JavaScript.
-
-In order to join multiple strings together, you can use **concatenation** or
-**interpolation**.
-
-Concatenation is when you add multiple strings together.
+A special number...that's not a number?
 
 ```js
-let helloWorld = "Hello" + "world"
+typeof NaN
+// => Number
 ```
 
-Interpolation is where you reference a variable within a string. Use back ticks
-for the entire string, and put a dollar sign with curly brackets around the
-variable.
+`NaN` is the return value from operations which have an undefined numerical
+result (e.g. dividing 0 by 0, multiplying strings together).
 
 ```js
-let hello = "Hello"
-
-let helloWorld = `${hello} world`
+0/0
+// => NaN
 ```
 
-There are also a bunch of **methods** you can run on strings.
-
-**.search()**: find the starting index of a string value. String indexes are
-0-based, so the index of a string's first character is 0.
+You can test whether a value is a valid number using the `isNaN()` function. The
+method will return false if the argument passed into it is a valid number.
 
 ```js
-var greetings = "Hi there friend!"
-greetings.search("friend")
+const myFavoriteNumber = 5
+isNaN(myFavoriteNumber)
+// => false, because 5 is valid
+
+const myUnrealNumber = 0/0
+isNaN(myUnrealNumber)
+// => true, because 0 divided by 0 is NaN
 ```
 
-**.substr()**: return and store a portion of a string. First argument is the
-start position; second argument is the length of the section you copy.
+## Variable Syntax (5 minutes / 1:25)
+
+### Semicolons
+
+* Semicolons can be put at the end of each line.
+* We don't recommend using them, but if you do be consistent!
+* The only catch with not using semicolons is that you can't start a line of
+  code with `(`, `[`, or a backtick (`).
+* References:
+    * [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
+    * [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
+    * [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
+    * [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
+
+### camelCase
+
+JavaScript variables and function names are conventionally written using camel case syntax.
+
+* First letter of first word lowercase
+* First letter of remaining words uppercase
+* No spaces or punctuation between words
+
+#### Examples
 
 ```js
-var buddy = greetings.substr(9, 6)
+var pizzaTopping = "pepperoni"
+var isThisVariableCamelCase = true
+var hasURLChanged = false
 ```
 
-**.slice()**: returns a copy of a section of a string. First argument is the
-start position; second argument is the end position.
+> Note: Other types: kebab-case, which separates words with dashes, and snake case, which uses underscores. 
+
+> Use kebab case for CSS classes. CSS is essentially case-sensitive, so this-class-name is much easier to read than thisClassName.
+
+> snake_case is used in programming languages like Python.
+
+> You don't have to follow camelCase standards, you could just uppercase everything. But it's a good idea to have be consistent everywhere, especially when working with other developers.
+
+### Comments
+
+Comments are an extremely important part of writing code. They help us make
+sense of our code, especially for other people reading our code, or when we have
+walked away from some code and have completely forgotten what certain sections
+of it do. This happens much more quickly than you may imagine.
+
+If you are working on a team, your documentation and commenting practices often
+translate to how easy you are to work with!
 
 ```js
-var buddy = greetings.slice(9, 15)
+// Single line comment
+
+/*
+  Multiple
+  line
+  comments
+*/
 ```
 
-[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-are a bunch more examples.
-
-### Escape sequences
-
-Sometimes you will need to use special characters or formatting in strings that
-can't be entered the same way as you would in a word processor. In these cases,
-you use "escape sequences".
-
-* Syntax: backslash + letter (e.g., `"\n"`).
-
-```js
-// "\n" = new line
-"Hello\nGoodbye"
-// returns"Hello"
-// returns"Goodbye"
-
-// "\t" = tab
-"\tOnce upon a time..."
-// returns "     Once upon a time..."
-```
-
-> You can check out more escape sequence examples
-> [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).
-
-#### You Do (5 minutes / 11:30)
-
-* Write two variables in JavaScript, one with your first name and one with your
-  last name.
-* Use string interpolation to add your first name and your last name to a new
-  variable for your full name.
-* Get the first letter of your name using a string method.
-* Write your address using proper spacing in JavaScript (Hint: Escape Sequence).
-* Get just your first name from your full name variable.
-* Use a string method we haven't learned yet to do something else to your name!
-
-## Break (10 minutes / 11:40)
-
-## Booleans (10 minutes / 11:50)
-
-This is the most simple JavaScript data type. They can have the values `true` or
-`false`.
-
-### Comparison Operators (10 minutes / 12:00)
-
-We encounter booleans most often when comparing two values using comparison
-operators like...
-
-* `==` - equal (in value)
-* `===` - equal (in value and data type)
-* `!=` - not equal (in value)
-* `!==` - not equal (in value and data type)
-* `<` - less than
-* `>` - greater than
-* `<=` - less than or equal to
-* `>=` - greater than or equal to
-
-<details>
-  <summary>What is the difference between `==` and `===`?</summary>
-
-* `===` checks for both the data type and value.
-* `==` only checks for value.
-
-</details>
-
-Comparison operators return a boolean value.
-
-```js
-1 == 1
-// Does 1 equal 1? Yes ==> true
-
-1 == 2
-// Does 1 equal 2? No ==> false
-
-1 === 1
-// Does 1 equal 1 AND are both values numbers? Yes ==> true
-
-1 == "1"
-// Does 1 equal 1? Yes ==> true
-// In this scenario, the numerical value inside "1" is evaluated. Javascript doesn't care that the right side is a string because we are using `==`
-
-1 === "1"
-// Does 1 equal 1 AND are both values numbers? No ==> false
-// This time, Javascript does care about data types because we are using `===`. Because the left side is a Number and the right side is a String, this evaluates to false.
-```
-
-#### Logical Operators
-
-Logical operators are used to determine the logic between values or variables.
-There are three main logical operators:
-
-* `!`
-* `&&`
-* `||`
-
-`!` is an operator that means 'not'. For example, `!==` means 'not equal'.
-
-<details>
-<summary>Given a variable `a` equals `true`, what does `!a` evaluate to?</summary>
-`false`
-</details>
-
-<details>
-<summary>Given a variable `!a` equals `true`, what does `a` evaluate to?</summary>
-`false`
-</details>
-
-`&&` operates as 'AND' and `||` operates as 'OR'
-
-#### You Do (5 minutes / 12:05)
-
-Given this, take 5 minutes to fill out the truth tables below.
-
-> **NOTE:** Because of markdown formatting, `||` and `&&` have been replaced
-> with `OR` and `AND` respectively.
-
-| a | b | a AND b |
-| --- | --- | --- |
-| true | true |
-| true | false |
-| false | true |
-| false | false |
-
-|a|b|a OR b|
-|---|---|---|
-|true|true|
-|true|false|
-|false|true|
-|false|false|
-
-|a|b|a `!=` b|
-|---|---|---|
-|3|3|
-|1|5|
-|2|"2"|
-
-|a|b|!a AND (a OR b)|
-|---|---|---|
-|true|true|
-|true|false|
-|false|true|
-|false|false|
-
-## You Do: Type Conversion (5 minutes / 12:10)
+## You Do: Type Conversion (5 minutes / 1:30)
 
 With the person next to you, spend five minutes on the following activity.
 First, predict what the line of code will do, next run the code in your REPL and
@@ -664,7 +635,7 @@ There are other examples of type coercion, but the point here isn't to remember
 them all. Just be aware that sometimes JavaScript will yield weird results with
 no explanation - and it may be due to type coercion.
 
-## Arrays (15 minutes / 12:25)
+## Arrays (15 minutes / 1:45)
 
 Arrays are an ordered collection of related data and are organized by index.
 
@@ -712,16 +683,146 @@ letters[1][2]
 
 </details>
 
+Arrays can also contain any type of data, not just primitives. Arrays can contain functions and objects!
+
+```js
+let mixed = [{ key: 'value' }, function() { console.log("I'm fun") }, 0, "a string",  ]
+```
+
+> The syntax can be hard to read, but how many items are in this array?
+
+## Objects (15 min / 2:00)
+
+Objects in javascript are fundamental to the language. Everything is an object. **Literally everything.** This will make more sense later.
+
+To declare an object, just write `{}`
+
+```js
+let students = {}
+```
+
+Objects **MUST** contain key/value pairs to be valid syntax. The key and value are separated by a `:`
+
+```js
+let students = {
+  name: "Jimmy"
+}
+```
+
+The value can be any type, including arrays, strings, numbers, even other objects!
+
+```js
+let wdi = {
+  students: ["Jimmy", "Frank"],
+  curriculum: {
+    hard: true,
+    valuable: "Absolutely"
+  },
+}
+```
+
+You can access properties of objects by their names.
+
+```js
+  console.log(wdi.students)
+  // ["Jimmy", "Frank"]
+  console.log(wdi.curriculum.hard)
+  // true
+  console.log(wdi.curriculum.valuable)
+  // "Absolutely"
+```
+
+
+We'll cover more about objects in a later lesson, but these are the basics.
+
+### You do: Objects exercise
+
+Build the biggest, baddest object that you can and console.log each of the properties in it.
+
+## Data Type Methods (Rest of class / 2:30)
+
+Each of the data types we've covered so far has their own "methods". These are functions that you can run to perform certain operations. 
+
+Pay attention to what type you're trying to use a method on. For example, you can't use string methods on numbers, and vice versa. Each type has its own methods.
+
+### String Methods
+
+**.substr()**: return and store a portion of a string. First argument is the
+start position; second argument is the length of the section you copy.
+
+```js
+var greetings = "Hi there friend!"
+var buddy = greetings.substr(9, 6)
+```
+
+**.concat()**: combine two strings together.
+
+```js
+var greeting = "Hello"
+var place = "Las Vegas"
+
+greeting.concat(" ", place)
+// "Hello Las Vegas"
+```
+
+**.indexOf()**: Find the position of a string inside of another string
+
+```js
+let nooo = "Luke, I am your father"
+nooo.indexOf("father")
+// 16
+```
+
+**.split()**: split a string into an array, determined by the separator you pass in
+
+```js
+let phrase = "Rubber baby buggy bumpers is a hard one"
+let result = phrase.split(" ") // split on the space separator
+console.log(result)
+// ["Rubber", "baby", "buggy", "bumpers", "is", "a", "hard", "one"]
+```
+
+> There are way more methods than this. See the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+#### You do: String Methods
+
+Spend a few minutes experimenting with each of the methods. 
+
+### Number Methods
+
+There aren't as many of these, but still two useful ones.
+
+***.toString()**: Coverts a number to a string.
+
+```js
+var makeMeAString = 58320
+let nowImAString = makeMeAString.toString()
+console.log(nowImAString)
+// "58320"
+```
+
+***.toFixed()**: Trim a decimal to the specified number of digits.
+
+```js
+var makeMeFixed = 58320.73242
+let fixed = makeMeFixed.toFixed(2)
+console.log(fixed)
+// "58320.73"
+```
+
 ### Array Methods
 
 There are a lot of useful methods that come with JavaScript we can use to
 inspect and modify arrays. To learn what some of them are...
 
 * `.length`
-* `.push` / `.pop`
-* `.shift` / `.unshift`
-* `.indexOf`
-* `.reverse`
+* `.push()` / `.pop()`
+* `.shift()` / `.unshift()`
+* `.indexOf()`
+* `.reverse()`
+* `.concat()`
+* `.join()`
+* `.sort()`
 
 > There are many more, but these are the most widely-used.
 
@@ -730,10 +831,12 @@ inspect and modify arrays. To learn what some of them are...
 1. Write an array that contains the names of the people in your row.
 2. Get the index of your name in that array (using an array method).
 3. Add the person in front of you to the array (using an array method).
+4. Combine two arrays 
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is more documentation on arrays.
 
-#### The Spread Operator
+
+## Bonus: The Spread Operator
 
 The spread operator `...` allows an expression to be expanded into multiple
 elements.
@@ -750,7 +853,7 @@ console.log(dimensions[0], dimensions[1], dimensions[2])
 console.log(...dimensions)
 ```
 
-#### Copying Arrays
+#### Bonus: Copying Arrays
 
 Variables in JavaScript only store references to arrays rather than the array
 itself. Therefore, if we do something like the following, both arrays will be
@@ -790,58 +893,6 @@ We can also copy arrays using the `.slice()` array method.
 var arr = [1, 2, 3]
 var arr2 = arr.slice()
 ```
-
-#### Destructuring Arrays
-
-Let's say we want to pull some values out of an array and save them in
-variables. With what we know so far, we would do something like this...
-
-```js
-// ES5
-
-const numbers = [1, 2, 3, 4]
-
-const first = numbers[0]
-const second = numbers[1]
-const third = numbers[2]
-const fourth = numbers[3]
-```
-
-With ES6, we can now destructure arrays and assign those variables like the
-below example. This can be very useful when you need to assign multiple
-variables at the same time.
-
-```js
-// ES6
-
-const [first, second, third, fourth] = [1, 2, 3, 4]
-
-console.log(first)
-// => 1
-
-console.log(second)
-// => 2
-```
-
-We could also use this approach...
-
-```js
-const numbers = [1, 2, 3, 4]
-const [first, second, third] = numbers
-
-console.log(first)
-// => 1
-
-console.log(second)
-// => 2
-
-console.log(third)
-// => 3
-```
-
-> Array destructuring knows to begin assigning values from left to right. If we
-> had also included a `fourth` variable inside of the array destructuring in the
-> above example, it would have set it to 4.
 
 ## Closing
 
