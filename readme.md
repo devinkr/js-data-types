@@ -186,8 +186,11 @@ all examples of strings in JavaScript.
 It doesn't matter whether you use double or single quotes, but if you need to include either a double or a single quote in your string, wrap it in the other type.
 
 Example: 
+
+```js
 `"What's the weather like today?"`
 `'This dude is really into "air quotes"'`
+```
 
 In order to join multiple strings together, you can use **concatenation** or
 **interpolation**.
@@ -224,12 +227,13 @@ you use "escape sequences".
 ```js
 // "\n" = new line
 "Hello\nGoodbye"
-// returns"Hello"
-// returns"Goodbye"
+// returns
+// "Hello"
+// "Goodbye"
 
 // "\t" = tab
-"\tOnce upon a time..."
-// returns "     Once upon a time..."
+"Once upon\ta time..."
+// returns "Once upon     a time..."
 
 // You can also escape quotes
 "What's with this dude's \"air quotes\"? He's insane"
@@ -241,7 +245,7 @@ you use "escape sequences".
 
 ### You Do: String exercise
 
-* console.log 5 strings
+* In your script.js file, console.log 5 strings
   - 1 that has double quotes
   - 1 with single quotes
   - 1 with double quotes and a single quote inside it
