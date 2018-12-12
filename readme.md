@@ -2,10 +2,10 @@
 
 ## Learning Objectives
 
-* Start using JavaScript and use developer tools.
-* Introduce the syntax of the JavaScript language.
-* Work with the primitive data types in JavaScript.
-* Start working with arrays in JavaScript.
+- Start using JavaScript and use developer tools.
+- Introduce the syntax of the JavaScript language.
+- Work with the primitive data types in JavaScript.
+- Start working with arrays in JavaScript.
 
 ## Intro (5 minutes / 0:05)
 
@@ -29,18 +29,20 @@ touch index.html script.js
 code .
 ```
 
-Go into the HTML file and enter HTML boilerplate code:
+Go into the HTML file and enter HTML boilerplate code. If you're using VS Code
+you can just type `html:5` and hit tab, or you can enter all the boilerplate
+below:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-
-</body>
+  </head>
+  <body></body>
 </html>
 ```
 
@@ -52,14 +54,15 @@ In index.html:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
 ```
 
@@ -99,28 +102,34 @@ console.log("hello world, from script2")
 In index.html, in the head, add:
 
 ```html
-  <script defer src="script2.js"></script>
+<script defer src="script2.js"></script>
 ```
 
 Now let's do it a third time!
 
-Create a `script3.js` and include it in head, this time without a `defer` attribute.
+Create a `script3.js` and include it in head, this time without a `defer`
+attribute.
 
 ```html
-  <script src="script3.js"></script>
+<script src="script3.js"></script>
 ```
 
 Go back to the browser and refresh the page.
 
 ### Many ways to link a file
 
-Placing the script at the bottom of the `body` allows your HTML to load first, then it downloads and executes your JS file.
+Placing the script at the bottom of the `body` allows your HTML to load first,
+then it downloads and executes your JS file.
 
-Putting `defer` on your script tag in the head executes it after the entire page has loaded.
+Putting `defer` on your script tag in the head executes it after the entire page
+has loaded.
 
-Placing a plain old script tag in the head, that doesn't have any attributes on it, runs the script before html loads. If you do this make sure that your script doesn't depend on HTML already being there.
+Placing a plain old script tag in the head, that doesn't have any attributes on
+it, runs the script before html loads. If you do this make sure that your script
+doesn't depend on HTML already being there.
 
-**Bonus Reading:** [async and defer attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+**Bonus Reading:**
+[async and defer attributes in a script tag](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
 It is also possible to write JavaScript directly into your HTML file within the
 `script` tags, but keeping all JS in a separate file makes it easier to edit and
@@ -160,7 +169,6 @@ will read, evaluate, and print `9`.
 Another example of a REPL is: [https://repl.it/](https://repl.it/). This may be
 a helpful tool to use throughout class to test code.
 
-
 Keyboard shortcut: Highlight code and press **Command + /** (`⌘ + /`)
 
 ## Primitive Data Types in JavaScript
@@ -169,7 +177,8 @@ What do we mean when we say data types?
 
 > Think of data types as ways of representing information.
 
-A primitive data type is one that represents a single value (as opposed to multiple values). In JavaScript there are five primitive types:
+A primitive data type is one that represents a single value (as opposed to
+multiple values). In JavaScript there are five primitive types:
 
 1. Strings
 2. Numbers
@@ -183,13 +192,16 @@ Strings are how JavaScript represents text. They are a series of characters in
 single or double quotes. `'Hello World!'`, `"Hello World!"`, `'h'`, and `''` are
 all examples of strings in JavaScript.
 
-It doesn't matter whether you use double or single quotes, but if you need to include either a double or a single quote in your string, wrap it in the other type.
+It doesn't matter whether you use double or single quotes, but if you need to
+include either a double or a single quote in your string, wrap it in the other
+type.
 
-Example: 
+Example:
 
 ```js
-`"What's the weather like today?"`
-`'This dude is really into "air quotes"'`
+"What's the weather like today?"
+
+'This dude is really into "air quotes"'
 ```
 
 In order to join multiple strings together, you can use **concatenation** or
@@ -211,7 +223,8 @@ let hello = "Hello"
 let helloWorld = `${hello} world`
 ```
 
-> You can totally use backticks without using interpolation as well, if you prefer.
+> You can totally use backticks without using interpolation as well, if you
+> prefer.
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 are a bunch more examples.
@@ -222,7 +235,7 @@ Sometimes you will need to use special characters or formatting in strings that
 can't be entered the same way as you would in a word processor. In these cases,
 you use "escape sequences".
 
-* Syntax: backslash + letter (e.g., `"\n"`).
+- Syntax: backslash + letter (e.g., `"\n"`).
 
 ```js
 // "\n" = new line
@@ -233,7 +246,7 @@ you use "escape sequences".
 
 // "\t" = tab
 "Once upon\ta time..."
-// returns "Once upon     a time..."
+// returns "Once upon    a time..."
 
 // You can also escape quotes
 "What's with this dude's \"air quotes\"? He's insane"
@@ -245,7 +258,7 @@ you use "escape sequences".
 
 ### You Do: String exercise
 
-* In your script.js file, console.log 5 strings
+- In your script.js file, console.log 5 strings
   - 1 that has double quotes
   - 1 with single quotes
   - 1 with double quotes and a single quote inside it
@@ -254,9 +267,9 @@ you use "escape sequences".
 
 ## Numbers (10 minutes / 0:40)
 
-Numbers are simply represented by their digits. In JS, `4`, `345092318`, `-3`, `2.5`
-and `10e7` all mean just what you would expect. To create a number in JS, just
-write it.
+Numbers are simply represented by their digits. In JS, `4`, `345092318`, `-3`,
+`2.5` and `10e7` all mean just what you would expect. To create a number in JS,
+just write it.
 
 > If you write `"645"` is that a number?
 
@@ -286,7 +299,8 @@ happens.
 10 ** 2
 ```
 
-* You can find a full list of arithmetic operators [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
+- You can find a full list of arithmetic operators
+  [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
 
 ### % (Modulus)
 
@@ -320,20 +334,21 @@ This is the most simple JavaScript data type. They can have the values `true` or
 
 We encounter booleans most often when comparing two values using comparison
 operators like...
-* `==` - equal (in value)
-* `===` - equal (in value and data type)
-* `!=` - not equal (in value)
-* `!==` - not equal (in value and data type)
-* `<` - less than
-* `>` - greater than
-* `<=` - less than or equal to
-* `>=` - greater than or equal to
+
+- `==` - equal (in value)
+- `===` - equal (in value and data type)
+- `!=` - not equal (in value)
+- `!==` - not equal (in value and data type)
+- `<` - less than
+- `>` - greater than
+- `<=` - less than or equal to
+- `>=` - greater than or equal to
 
 <details>
   <summary>What is the difference between `==` and `===`?</summary>
 
-* `===` checks for both the data type and value.
-* `==` only checks for value.
+- `===` checks for both the data type and value.
+- `==` only checks for value.
 
 </details>
 
@@ -363,9 +378,9 @@ Comparison operators return a boolean value.
 Logical operators are used to determine the logic between values or variables.
 There are three main logical operators:
 
-* `!`
-* `&&`
-* `||`
+- `!`
+- `&&`
+- `||`
 
 `!` is an operator that means 'not'. For example, `!==` means 'not equal'.
 
@@ -381,13 +396,16 @@ There are three main logical operators:
 
 `&&` operates as 'AND' and `||` operates as 'OR'
 
-
 ## Break (10 min / 1:05)
 
 ## Variables (10 min / 1:15)
 
 **Variables** are containers for information -- we can store any value in them.
-We can use them to help repeat, change, store, or edit our data.
+
+Think of a variable like a box. You can put lots of things into the box, like a
+doll, rug, or cat. The box still contains something.
+
+We use variables to help repeat, change, store, or edit our data.
 
 In order to **declare** a variable in JavaScript we use the keywords `var`,
 `const`, or `let`. The original declaration keyword was `var`, but in newer
@@ -395,9 +413,20 @@ versions of JavaScript `const` and `let` were implemented. `const` is used on
 variables that will not be changed in your JavaScript code. `let` is used for
 variables that do change.
 
-Most of the time, we want our variables to immediately store a value. Therefore,
-we **assign** values to our variables when we declare them. Here are three
-examples of variable assignment and declaration at the same time.
+Most of the time, we want our variables to immediately store a value (like a box
+with a cat in it). Therefore, we **assign** values to our variables when we
+declare them.
+
+We can create a variable without assigning it a value, if we want. This would be
+like having an empty box.
+
+```js
+const noValue
+console.log(noValue)
+// => undefined
+```
+
+Here are three examples of variable assignment and declaration at the same time.
 
 ```js
 const myVar = 42
@@ -410,20 +439,16 @@ let doubleSum = 2 * sum
 console.log(doubleSum)
 ```
 
-Here is an example of variable declaration that doesn't immediately have a value
-assigned:
-
-```js
-let unassigned
-console.log(unassigned)
-```
-
 Once we have a declared variable, we can change its value. Here are some
 examples:
 
 ```js
-unassigned = 'assigned now'
-console.log(unassigned)
+const noValue
+console.log(noValue)
+// => undefined
+
+noValue = "assigned now"
+console.log(noValue)
 // => 'assigned now'
 ```
 
@@ -433,21 +458,21 @@ between data types. The following change is valid.
 ```js
 var myFavoriteNumber = 5
 
-myFavoriteNumber
+console.log(myFavoriteNumber)
 // => 5
 
 myFavoriteNumber = "five"
 
-myFavoriteNumber
+console.log(myFavoriteNumber)
 // => "five"
 ```
 
 ## Null + Undefined + NaN (5 minutes / 1:20)
 
-* If we declare a variable without assigning a value to it, it will, by default,
+- If we declare a variable without assigning a value to it, it will, by default,
   have a value of `undefined`.
 
-* Null is very similar to `undefined` but we have to explicitly assign it to a
+- Null is very similar to `undefined` but we have to explicitly assign it to a
   variable.
 
 In summary, the difference is that `undefined` implies nothing because it never
@@ -466,7 +491,7 @@ typeof NaN
 result (e.g. dividing 0 by 0, multiplying strings together).
 
 ```js
-0/0
+0 / 0
 // => NaN
 ```
 
@@ -478,7 +503,7 @@ const myFavoriteNumber = 5
 isNaN(myFavoriteNumber)
 // => false, because 5 is valid
 
-const myUnrealNumber = 0/0
+const myUnrealNumber = 0 / 0
 isNaN(myUnrealNumber)
 // => true, because 0 divided by 0 is NaN
 ```
@@ -487,39 +512,52 @@ isNaN(myUnrealNumber)
 
 ### Semicolons
 
-* Semicolons can be put at the end of each line.
-* We don't recommend using them, but if you do be consistent!
-* The only catch with not using semicolons is that you can't start a line of
+- Semicolons can be put at the end of each line.
+- We don't recommend using them, but if you do be consistent!
+- The only catch with not using semicolons is that you shouldn't start a line of
   code with `(`, `[`, or a backtick (`).
-* References:
-    * [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
-    * [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
-    * [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
-    * [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
+- References:
+  - [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
+  - [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
+  - [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
+  - [Hacking Semicolons (by Evan You who wrote Vue.js)](http://slides.com/evanyou/semicolons#/)
 
 ### camelCase
 
-JavaScript variables and function names are conventionally written using camel case syntax.
+JavaScript variables and function names are case sensitive. You can write them however you want, but they're conventionally written using camel
+case syntax.
 
-* First letter of first word lowercase
-* First letter of remaining words uppercase
-* No spaces or punctuation between words
+- First letter of first word lowercase
+- First letter of remaining words uppercase
+- No spaces or punctuation between words
 
 #### Examples
 
 ```js
-var pizzaTopping = "pepperoni"
-var isThisVariableCamelCase = true
-var hasURLChanged = false
+const pizzaTopping = "pepperoni"
+const isThisVariableCamelCase = true
+const hasURLChanged = false
 ```
 
-> Note: Other types: kebab-case, which separates words with dashes, and snake case, which uses underscores. 
+Because Javascript is case sensitive, it helps to be consistent in your naming conventions.
 
-> Use kebab case for CSS classes. CSS is essentially case-sensitive, so this-class-name is much easier to read than thisClassName.
+```js
+const pizzaTopping = "pepperoni"
+console.log(pizzatopping)
+// Uncaught ReferenceError: pizzatopping is not defined
+```
 
-> snake_case is used in programming languages like Python.
+> Note: Other types: kebab-case, which separates words with dashes, and snake
+> case, which uses underscores.
 
-> You don't have to follow camelCase standards, you could just uppercase everything. But it's a good idea to have be consistent everywhere, especially when working with other developers.
+Use kebab case for CSS classes. CSS is essentially case-sensitive, so
+this-class-name is much easier to read (and type!) than thisClassName.
+
+snake_case is used in programming languages like Python.
+
+> You don't have to follow camelCase standards, you could just UPPERCASE
+> EVERYTHING. But it's a good idea to be consistent everywhere, especially
+> when working with other developers.
 
 ### Comments
 
@@ -548,30 +586,29 @@ First, predict what the line of code will do, next run the code in your REPL and
 see what it actually does.
 
 ```js
-typeof(15)
+typeof 15
 // Prediction:
 // Actual:
 
-typeof(5.5)
+typeof 5.5
 // Prediction:
 // Actual:
 
-typeof(NaN)
+typeof NaN
 // Prediction:
 // Actual:
 
-typeof("hello")
+typeof "hello"
 // Prediction:
 // Actual:
 
-typeof(true)
+typeof true
 // Prediction:
 // Actual:
 
-typeof(1 != 2)
+typeof (1 != 2)
 // Prediction:
 // Actual:
-
 
 "hamburger" + "s"
 // Prediction:
@@ -604,9 +641,9 @@ typeof(1 != 2)
 
 JavaScript will try to make sense of any strange operations you throw at it.
 
-* Examples of "strange": subtracting a number from a string, multiplying `null`
+- Examples of "strange": subtracting a number from a string, multiplying `null`
   by 100.
-* It does this by converting data types using a process called type coercion.
+- It does this by converting data types using a process called type coercion.
 
 You might encounter this when dealing with numerical values in string form.
 
@@ -643,13 +680,13 @@ no explanation - and it may be due to type coercion.
 
 Arrays are an ordered collection of related data and are organized by index.
 
-* Indexing begins at 0 (e.g., first element in an array has an index of 0, the
+- Indexing begins at 0 (e.g., first element in an array has an index of 0, the
   second has an index of 1, and so on).
 
 We instantiate an array like this...
 
 ```js
-const mountRushmore = [ "Washington", "Jefferson", "Roosevelt" ]
+const mountRushmore = ["Washington", "Jefferson", "Roosevelt"]
 ```
 
 And access its values like so...
@@ -668,13 +705,13 @@ mountRushmore.push("Lincoln")
 // mountRushmore = [ "Washington", "Jefferson", "Roosevelt", "Lincoln" ]
 
 mountRushmore[3]
-// returns "Lincoln"
+// => "Lincoln"
 ```
 
 You can also place arrays within arrays.
 
 ```js
-const letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ]
+const letters = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
 ```
 
 <details>
@@ -687,17 +724,27 @@ letters[1][2]
 
 </details>
 
-Arrays can also contain any type of data, not just primitives. Arrays can contain functions and objects!
+Arrays can also contain any type of data, not just primitives. Arrays can
+contain functions and objects!
 
 ```js
-let mixed = [{ key: 'value' }, function() { console.log("I'm fun") }, 0, "a string",  ]
+let mixed = [
+  { object: "value" },
+  "one string",
+  function() {
+    console.log("I'm fun")
+  },
+  0,
+  "a second string"
+]
 ```
 
 > The syntax can be hard to read, but how many items are in this array?
 
 ## Objects (15 min / 2:00)
 
-Objects in javascript are fundamental to the language. Everything is an object. **Literally everything.** This will make more sense later.
+Objects in javascript are fundamental to the language. Everything is an object.
+**Literally everything.** This will make more sense later.
 
 To declare an object, just write `{}`
 
@@ -705,7 +752,8 @@ To declare an object, just write `{}`
 let students = {}
 ```
 
-Objects **MUST** contain key/value pairs to be valid syntax. The key and value are separated by a `:`
+Objects **MUST** contain key/value pairs to be valid syntax. The key and value
+are separated by a `:`
 
 ```js
 let students = {
@@ -713,7 +761,8 @@ let students = {
 }
 ```
 
-The value can be any type, including arrays, strings, numbers, even other objects!
+The value can be any type, including arrays, strings, numbers, even other
+objects!
 
 ```js
 let wdi = {
@@ -721,42 +770,47 @@ let wdi = {
   curriculum: {
     hard: true,
     valuable: "Absolutely"
-  },
+  }
 }
 ```
 
 You can access properties of objects by their names.
 
 ```js
-  console.log(wdi.students)
-  // ["Jimmy", "Frank"]
-  console.log(wdi.curriculum.hard)
-  // true
-  console.log(wdi.curriculum.valuable)
-  // "Absolutely"
+console.log(wdi.students)
+// ["Jimmy", "Frank"]
+console.log(wdi.curriculum.hard)
+// true
+console.log(wdi.curriculum.valuable)
+// "Absolutely"
 ```
-
 
 We'll cover more about objects in a later lesson, but these are the basics.
 
 ### You do: Objects exercise
 
-Build the biggest, baddest object that you can and console.log each of the properties in it.
+Build the biggest, baddest object that you can and console.log each of the
+properties in it.
 
 ## Data Type Methods (Rest of class / 2:30)
 
-Each of the data types we've covered so far has their own "methods". These are functions that you can run to perform certain operations. 
+Each of the data types we've covered so far has their own "methods". These are
+functions that you can run to perform certain operations.
 
-Pay attention to what type you're trying to use a method on. For example, you can't use string methods on numbers, and vice versa. Each type has its own methods.
+Pay attention to what type you're trying to use a method on. For example, you
+can't use string methods on numbers, and vice versa. Each type has its own
+methods.
 
 ### String Methods
 
-**.substr()**: return and store a portion of a string. First argument is the
-start position; second argument is the length of the section you copy.
+**.substr()**: return a portion of a string. First argument is the
+start position; second argument is the length of the section you copy. If you leave out the second argument it will include everything from the start to the end.
 
 ```js
 var greetings = "Hi there friend!"
 var buddy = greetings.substr(9, 6)
+console.log(buddy)
+// friend
 ```
 
 **.concat()**: combine two strings together.
@@ -777,7 +831,8 @@ nooo.indexOf("father")
 // 16
 ```
 
-**.split()**: split a string into an array, determined by the separator you pass in
+**.split()**: split a string into an array, determined by the separator you pass
+in
 
 ```js
 let phrase = "Rubber baby buggy bumpers is a hard one"
@@ -786,17 +841,18 @@ console.log(result)
 // ["Rubber", "baby", "buggy", "bumpers", "is", "a", "hard", "one"]
 ```
 
-> There are way more methods than this. See the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+> There are way more methods than this. See the
+> [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 #### You do: String Methods
 
-Spend a few minutes experimenting with each of the methods. 
+Spend a few minutes experimenting with each of the methods.
 
 ### Number Methods
 
 There aren't as many of these, but still two useful ones.
 
-***.toString()**: Coverts a number to a string.
+**\*.toString()**: Coverts a number to a string.
 
 ```js
 var makeMeAString = 58320
@@ -805,7 +861,7 @@ console.log(nowImAString)
 // "58320"
 ```
 
-***.toFixed()**: Trim a decimal to the specified number of digits.
+**\*.toFixed()**: Trim a decimal to the specified number of digits.
 
 ```js
 var makeMeFixed = 58320.73242
@@ -819,14 +875,14 @@ console.log(fixed)
 There are a lot of useful methods that come with JavaScript we can use to
 inspect and modify arrays. To learn what some of them are...
 
-* `.length`
-* `.push()` / `.pop()`
-* `.shift()` / `.unshift()`
-* `.indexOf()`
-* `.reverse()`
-* `.concat()`
-* `.join()`
-* `.sort()`
+- `.length`
+- `.push()` / `.pop()`
+- `.shift()` / `.unshift()`
+- `.indexOf()`
+- `.reverse()`
+- `.concat()`
+- `.join()`
+- `.sort()`
 
 > There are many more, but these are the most widely-used.
 
@@ -835,10 +891,10 @@ inspect and modify arrays. To learn what some of them are...
 1. Write an array that contains the names of the people in your row.
 2. Get the index of your name in that array (using an array method).
 3. Add the person in front of you to the array (using an array method).
-4. Combine two arrays 
+4. Combine two arrays
 
-[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) is more documentation on arrays.
-
+[Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+is more documentation on arrays.
 
 ## Bonus: The Spread Operator
 
@@ -902,12 +958,16 @@ var arr2 = arr.slice()
 
 ## Additional Practice + Resources
 
-* [Khan Academy Intro to Programming JS](https://www.khanacademy.org/computing/computer-programming/programming#intro-to-programming)
-* [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
-* [Eloquent JavaScript](http://eloquentjavascript.net/)
+- [Khan Academy Intro to Programming JS](https://www.khanacademy.org/computing/computer-programming/programming#intro-to-programming)
+- [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
+- [Eloquent JavaScript](http://eloquentjavascript.net/)
 
 ## Bonus: Linters
 
-* Install [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatter)
-* Install [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
-* Install [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- Install
+  [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  (formatter)
+- Install
+  [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
+- Install
+  [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
