@@ -22,7 +22,7 @@ We'll start by creating a new directory with HTML and JS files. From the command
 line:
 
 ```sh
-cd ~/wdi/sandbox
+cd ~/sei/sandbox
 mkdir js-data-types
 cd js-data-types
 touch index.html script.js
@@ -421,7 +421,7 @@ We can create a variable without assigning it a value, if we want. This would be
 like having an empty box.
 
 ```js
-const noValue
+let noValue
 console.log(noValue)
 // => undefined
 ```
@@ -443,7 +443,7 @@ Once we have a declared variable, we can change its value. Here are some
 examples:
 
 ```js
-const noValue
+let noValue
 console.log(noValue)
 // => undefined
 
@@ -765,7 +765,7 @@ The value can be any type, including arrays, strings, numbers, even other
 objects!
 
 ```js
-let wdi = {
+let sei = {
   students: ["Jimmy", "Frank"],
   curriculum: {
     hard: true,
@@ -777,11 +777,11 @@ let wdi = {
 You can access properties of objects by their names.
 
 ```js
-console.log(wdi.students)
+console.log(sei.students)
 // ["Jimmy", "Frank"]
-console.log(wdi.curriculum.hard)
+console.log(sei.curriculum.hard)
 // true
-console.log(wdi.curriculum.valuable)
+console.log(sei.curriculum.valuable)
 // "Absolutely"
 ```
 
