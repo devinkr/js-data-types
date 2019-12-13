@@ -816,18 +816,18 @@ console.log(buddy)
 **.concat()**: combine two strings together.
 
 ```js
-var greeting = "Hello"
-var place = "Las Vegas"
+let greeting = "Hello";
+let place = "Las Vegas";
 
-greeting.concat(" ", place)
+greeting.concat(" ", place);
 // "Hello Las Vegas"
 ```
 
 **.indexOf()**: Find the position of a string inside of another string
 
 ```js
-let nooo = "Luke, I am your father"
-nooo.indexOf("father")
+let nooo = "Luke, I am your father";
+nooo.indexOf("father");
 // 16
 ```
 
@@ -835,9 +835,9 @@ nooo.indexOf("father")
 in
 
 ```js
-let phrase = "Rubber baby buggy bumpers is a hard one"
-let result = phrase.split(" ") // split on the space separator
-console.log(result)
+let phrase = "Rubber baby buggy bumpers is a hard one";
+let result = phrase.split(" "); // split on the space separator
+console.log(result);
 // ["Rubber", "baby", "buggy", "bumpers", "is", "a", "hard", "one"]
 ```
 
@@ -855,18 +855,18 @@ There aren't as many of these, but still two useful ones.
 **\*.toString()**: Coverts a number to a string.
 
 ```js
-var makeMeAString = 58320
-let nowImAString = makeMeAString.toString()
-console.log(nowImAString)
+let makeMeAString = 58320;
+let nowImAString = makeMeAString.toString();
+console.log(nowImAString);
 // "58320"
 ```
 
 **\*.toFixed()**: Trim a decimal to the specified number of digits.
 
 ```js
-var makeMeFixed = 58320.73242
-let fixed = makeMeFixed.toFixed(2)
-console.log(fixed)
+let makeMeFixed = 58320.73242;
+let fixed = makeMeFixed.toFixed(2);
+console.log(fixed);
 // "58320.73"
 ```
 
@@ -904,13 +904,13 @@ elements.
 This is useful for separating an array into individual elements...
 
 ```js
-var dimensions = [10, 5, 2]
+let dimensions = [10, 5, 2];
 
 // ES5
-console.log(dimensions[0], dimensions[1], dimensions[2])
+console.log(dimensions[0], dimensions[1], dimensions[2]);
 
 // ES6
-console.log(...dimensions)
+console.log(...dimensions);
 ```
 
 #### Bonus: Copying Arrays
@@ -920,10 +920,10 @@ itself. Therefore, if we do something like the following, both arrays will be
 impacted.
 
 ```js
-let arr = [1, 2, 3]
-let arr2 = arr
+let arr = [1, 2, 3];
+let arr2 = arr;
 
-arr2.pop()
+arr2.pop();
 arr
 // => [1, 2]
 
@@ -935,10 +935,10 @@ The ES6 spread operator makes it really easy to deep copy arrays in JavaScript,
 or create a new array with the same values as the old one.
 
 ```js
-let arr = [1, 2, 3]
-let arr2 = [...arr]
+let arr = [1, 2, 3];
+let arr2 = [...arr];
 
-arr2.pop()
+arr2.pop();
 arr
 // => [1, 2, 3]
 
@@ -950,8 +950,8 @@ We can also copy arrays using the `.slice()` array method.
 
 ```js
 //ES5 Style
-var arr = [1, 2, 3]
-var arr2 = arr.slice()
+var arr = [1, 2, 3];
+var arr2 = arr.slice();
 ```
 
 ## Closing
