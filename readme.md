@@ -807,8 +807,8 @@ methods.
 start position; second argument is the length of the section you copy. If you leave out the second argument it will include everything from the start to the end.
 
 ```js
-var greetings = "Hi there friend!"
-var buddy = greetings.substr(9, 6)
+let greetings = "Hi there friend!"
+let buddy = greetings.substr(9, 6)
 console.log(buddy)
 // friend
 ```
