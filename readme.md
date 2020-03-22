@@ -513,9 +513,7 @@ isNaN(myUnrealNumber)
 ### Semicolons
 
 - Semicolons can be put at the end of each line.
-- We don't recommend using them, but if you do be consistent!
-- The only catch with not using semicolons is that you shouldn't start a line of
-  code with `(`, `[`, or a backtick (`).
+- We recommend using them consistently throughout this course!
 - References:
   - [JavaScript Semicolon Insertion](http://inimino.org/~inimino/blog/javascript_semicolons)
   - [Are Semicolons Necessary in JavaScript](https://www.youtube.com/watch?v=gsfbh17Ax9I)
@@ -534,16 +532,16 @@ case syntax.
 #### Examples
 
 ```js
-const pizzaTopping = "pepperoni"
-const isThisVariableCamelCase = true
-const hasURLChanged = false
+const pizzaTopping = "pepperoni";
+const isThisVariableCamelCase = true;
+const hasURLChanged = false;
 ```
 
 Because Javascript is case sensitive, it helps to be consistent in your naming conventions.
 
 ```js
-const pizzaTopping = "pepperoni"
-console.log(pizzatopping)
+const pizzaTopping = "pepperoni";
+console.log(pizzatopping);
 // Uncaught ReferenceError: pizzatopping is not defined
 ```
 
@@ -586,55 +584,55 @@ First, predict what the line of code will do, next run the code in your REPL and
 see what it actually does.
 
 ```js
-typeof 15
+typeof 15;
 // Prediction:
 // Actual:
 
-typeof 5.5
+typeof 5.5;
 // Prediction:
 // Actual:
 
-typeof NaN
+typeof NaN;
 // Prediction:
 // Actual:
 
-typeof "hello"
+typeof "hello";
 // Prediction:
 // Actual:
 
-typeof true
+typeof true;
 // Prediction:
 // Actual:
 
-typeof (1 != 2)
+typeof (1 != 2);
 // Prediction:
 // Actual:
 
-"hamburger" + "s"
+"hamburger" + "s";
 // Prediction:
 // Actual:
 
-"hamburgers" - "s"
+"hamburgers" - "s";
 // Prediction:
 // Actual:
 
-"1" + "3"
+"1" + "3";
 // Prediction:
 // Actual:
 
-"1" - "3"
+"1" - "3";
 // Prediction:
 // Actual:
 
-"johnny" + 5
+"johnny" + 5;
 // Prediction:
 // Actual:
 
-"johnny" - 5
+"johnny" - 5;
 // Prediction:
 // Actual:
 
-99 * "luftbaloons"
+99 * "luftbaloons";
 // Prediction:
 // Actual:
 ```
@@ -649,26 +647,26 @@ You might encounter this when dealing with numerical values in string form.
 
 ```js
 // In some cases JavaScript is helpful and converts strings to numbers in the correct way.
-"3" - "2"
+"3" - "2";
 // => 1
 
 // ...but sometimes it doesn't. In this example, the + operator acts as if it's concatenating two strings.
-"3" + "2"
+"3" + "2";
 // => 32
 
 // And this?
-"five" * 5
+"five" * 5;
 // => NaN
 ```
 
 When in doubt, convert data types that should be numbers using `parseInt()`.
 
 ```js
-parseInt("3")
+parseInt("3");
 // => 3
 // parseInt converts a string to a number value, if available.
 
-parseInt("burrito")
+parseInt("burrito");
 // => NaN, because "burrito" cannot be converted into a number
 ```
 
@@ -686,39 +684,39 @@ Arrays are an ordered collection of related data and are organized by index.
 We instantiate an array like this...
 
 ```js
-const mountRushmore = ["Washington", "Jefferson", "Roosevelt"]
+const mountRushmore = ["Washington", "Jefferson", "Roosevelt"];
 ```
 
 And access its values like so...
 
 ```js
-mountRushmore[0]
+mountRushmore[0];
 // => "Washington"
 
-mountRushmore[1]
+mountRushmore[1];
 // => "Jefferson"
 
-mountRushmore[2]
+mountRushmore[2];
 // => "Roosevelt"
 
-mountRushmore.push("Lincoln")
+mountRushmore.push("Lincoln");
 // mountRushmore = [ "Washington", "Jefferson", "Roosevelt", "Lincoln" ]
 
-mountRushmore[3]
+mountRushmore[3];
 // => "Lincoln"
 ```
 
 You can also place arrays within arrays.
 
 ```js
-const letters = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
+const letters = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]];
 ```
 
 <details>
 <summary>How would we go about accessing the letter "f" in the above array?</summary>
 
 ```js
-letters[1][2]
+letters[1][2];
 // => "f"
 ```
 
@@ -736,7 +734,7 @@ let mixed = [
   },
   0,
   "a second string"
-]
+];
 ```
 
 > The syntax can be hard to read, but how many items are in this array?
@@ -749,7 +747,7 @@ Objects in javascript are fundamental to the language. Everything is an object.
 To declare an object, just write `{}`
 
 ```js
-let students = {}
+let students = {};
 ```
 
 Objects **MUST** contain key/value pairs to be valid syntax. The key and value
@@ -758,7 +756,7 @@ are separated by a `:`
 ```js
 let students = {
   name: "Jimmy"
-}
+};
 ```
 
 The value can be any type, including arrays, strings, numbers, even other
@@ -771,17 +769,17 @@ let sei = {
     hard: true,
     valuable: "Absolutely"
   }
-}
+};
 ```
 
 You can access properties of objects by their names.
 
 ```js
-console.log(sei.students)
+console.log(sei.students);
 // ["Jimmy", "Frank"]
-console.log(sei.curriculum.hard)
+console.log(sei.curriculum.hard);
 // true
-console.log(sei.curriculum.valuable)
+console.log(sei.curriculum.valuable);
 // "Absolutely"
 ```
 
@@ -807,9 +805,9 @@ methods.
 start position; second argument is the length of the section you copy. If you leave out the second argument it will include everything from the start to the end.
 
 ```js
-let greetings = "Hi there friend!"
-let buddy = greetings.substr(9, 6)
-console.log(buddy)
+let greetings = "Hi there friend!";
+let buddy = greetings.substr(9, 6);
+console.log(buddy);
 // friend
 ```
 
