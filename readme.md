@@ -67,7 +67,7 @@ In index.html:
 ```
 
 Once the file is linked, we can go into our JS file and begin coding. In
-`script.js`:
+`script.js`, add the following line of code:
 
 ```js
 console.log("hello world")
