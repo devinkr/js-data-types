@@ -177,7 +177,8 @@ What do we mean when we say data types?
 
 > Think of data types as ways of representing information.
 
-A primitive data type is one that represents a single value (as opposed to
+A [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) 
+data type is one that represents a single value (as opposed to
 multiple values). In JavaScript there are five common primitive types:
 
 1. Strings
