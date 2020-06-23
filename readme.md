@@ -178,13 +178,16 @@ What do we mean when we say data types?
 > Think of data types as ways of representing information.
 
 A primitive data type is one that represents a single value (as opposed to
-multiple values). In JavaScript there are five primitive types:
+multiple values). In JavaScript there are five common primitive types:
 
 1. Strings
 2. Numbers
 3. Booleans
 4. Undefined
 5. Null
+
+There is a sixth data type, [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#BigInt_type),
+which is relatively new and not commonly used yet.
 
 ## Strings (10 minutes / 0:30)
 
