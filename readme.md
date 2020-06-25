@@ -455,6 +455,34 @@ noValue = "assigned now"
 console.log(noValue)
 // => 'assigned now'
 ```
+You can change the properties of a constant object:
+
+```js
+// You can create a const object:
+const person = {
+  name: 'Hou', 
+  profession: 'engineer', 
+  ethnicity: 'asian'
+};
+
+// You can change a property:
+person.profession = 'SEIR instructor';
+
+// You can add a property:
+person.age = 32;
+```
+
+But you can NOT reassign a constant object:
+
+```js
+const mobilePhone = {
+  type: 'iphone'
+};
+
+mobilePhone = {
+  type: 'samsung'
+};
+```
 
 JavaScript is a "dynamically-typed" language, meaning a variable can switch
 between data types. The following change is valid.
