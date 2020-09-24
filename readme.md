@@ -920,9 +920,9 @@ inspect and modify arrays. To learn what some of them are...
 
 #### You Do: Array Practice
 
-1. Write an array that contains the names of the people in your row.
+1. Write an array that contains the names of the people in breakout room.
 2. Get the index of your name in that array (using an array method).
-3. Add the person in front of you to the array (using an array method).
+3. Add the IA on duty to the array (using an array method).
 4. Combine two arrays
 
 [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
