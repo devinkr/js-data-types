@@ -462,13 +462,13 @@ You can change the properties of a constant object:
 ```js
 // You can create a const object:
 const person = {
-  name: 'Hou', 
-  profession: 'engineer', 
-  ethnicity: 'asian'
+  name: 'Clay Stevens', 
+  profession: 'sales', 
+  contact: '111-111-1111'
 };
 
 // You can change a property:
-person.profession = 'SEIR instructor';
+person.profession = 'Software Engineer';
 
 // You can add a property:
 person.age = 32;
