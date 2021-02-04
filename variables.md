@@ -171,4 +171,4 @@ like to comment out and do the same: `command` + `/`.
 
 ## Next: [Primitive Data Types](primitive-data-types.md)
 
-### Previous: [Intro to JS](./README.md)
+### Previous: [Intro to JS](https://git.generalassemb.ly/SEIR-201/js-data-types)
