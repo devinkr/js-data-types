@@ -80,57 +80,6 @@ let mixed = [
 > The syntax can be hard to read, but how many items are in this array?
 
 
-## Objects
-
-Objects in javascript are fundamental to the language. Everything is an object.
-**Literally everything.** This will make more sense later.
-
-To declare an object, just write `{}`
-
-```js
-let students = {};
-```
-
-Objects **MUST** contain key/value pairs to be valid syntax. The key and value
-are separated by a `:`
-
-```js
-let students = {
-  name: "Jimmy"
-};
-```
-
-The value can be any type, including arrays, strings, numbers, even other
-objects!
-
-```js
-let sei = {
-  students: ["Jimmy", "Frank"],
-  curriculum: {
-    hard: true,
-    valuable: "Absolutely"
-  }
-};
-```
-
-You can access properties of objects by their names.
-
-```js
-console.log(sei.students);
-// ["Jimmy", "Frank"]
-console.log(sei.curriculum.hard);
-// true
-console.log(sei.curriculum.valuable);
-// "Absolutely"
-```
-
-We'll cover more about objects in a later lesson, but these are the basics.
-
-### You do: Objects exercise
-
-Build the biggest, baddest object that you can and console.log each of the
-properties in it.
-
 ## Data Type Methods
 
 Each of the data types we've covered so far has their own "methods". These are
@@ -156,6 +105,31 @@ inspect and modify arrays. To learn what some of them are...
 - `.sort()`
 
 > There are many more, but these are the most widely-used.
+
+#### Length method
+
+The `length` method works in an interesting way in Javascript. It is always one more than the highest index in the array.
+
+So `array.length` isn't necessarily the number of items in the array. Consider the following:
+
+```javascript
+let a = ['dog', 'cat', 'hen'];
+a[100] = 'fox';
+a.length; // 101
+```
+
+**Remember**: the length of the array is one more than the highest index.
+
+#### Getting data from an array
+
+If you query a non-existent array index, you get `undefined`:
+
+```javascript
+let a = ['dog', 'cat', 'hen'];
+
+a[90];
+=> undefined
+```
 
 #### You Do: Array Practice
 
@@ -225,6 +199,92 @@ We can also copy arrays using the `.slice()` array method.
 var arr = [1, 2, 3];
 var arr2 = arr.slice();
 ```
+
+## Objects
+
+Objects in javascript are fundamental to the language. Everything is an object.
+Aside from the values `null` and `undefined`, **literally in JavaScript is an object**. This will make more sense later.
+
+Like arrays, objects can hold multiple pieces of data of varying types; but unlike arrays, objects use named keys rather than indices to order and access those pieces of data
+
+Example: A car has properties, a type of engine, a color, a certain number of seats etc. Following the same logic, a JavaScript object may have **properties** and **values** for these properties.
+### Collection of key-value pairs
+
+The following is an example of an object's key-value pair syntax:
+
+```javascript
+const car = {
+  make: 'Honda',
+  model: 'Civic',
+  year: 1989,
+  engine: '1.5 liter',
+  seats: 5,
+  color: 'grey'
+}
+```
+> "make" is the key, while "Honda" is the value
+
+> Objects must have both a key and a value - neither can be empty.
+
+Unlike arrays, objects use *named keys* rather than ordered indexes. Each piece of data is bound to its key, rather than assigned an index. The data is not sequential.
+
+We could store this same information in an array like this:
+
+```
+const car = ['Honda', 'Civic', 1989]
+```
+
+But with the array above, we don't know what the values mean. Does 'Civic' refer to the name of the owner, or the model of the vehicle?
+
+
+To declare an object, just write `{}`
+
+```js
+let students = {};
+```
+
+Objects **MUST** contain key/value pairs to be valid syntax. The key and value
+are separated by a `:`
+
+```js
+let students = {
+  name: "Jimmy"
+};
+```
+
+The value can be any type, including arrays, strings, numbers, even other
+objects!
+
+```js
+let sei = {
+  students: ["Jimmy", "Frank"],
+  curriculum: {
+    hard: true,
+    valuable: "Absolutely"
+  }
+};
+```
+
+You can access properties of objects by their names.
+
+```js
+console.log(sei.students);
+// ["Jimmy", "Frank"]
+console.log(sei.curriculum.hard);
+// true
+console.log(sei.curriculum.valuable);
+// "Absolutely"
+```
+
+We'll cover more about objects in a later lesson, but these are the basics.
+
+### You do: Objects exercise
+
+Build the biggest, baddest SEI student object that you can and console.log each of the
+properties in it.
+
+- **Bonus** - One key value pair contains an array
+- **Double Bonus** - one key value pair contains another object
 
 ## Closing
 
