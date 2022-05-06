@@ -2,10 +2,14 @@
 
 # Introduction to JavaScript: Variables
 
-**Variables** are containers for information -- we can store any value in them.
+According to the MDN docs "A variable is a named reference to a value. That way an unpredictable value can be accessed through a predetermined name."
 
-Think of a variable like a box. You can put lots of things into the box, like a
-doll, rug, or cat. The box still contains something.
+One analogy to describe variables is like a box. You can put lots of things into the box, like a
+doll, rug, or cat. You can change what the box holds.
+
+This analogy can help get the initial understanding of a variable, but I find it's a bit too much of a simplification and makes it more difficult to understand more complication scenerios. I like to think of a **Variable** as a label with a wire pointing to a value. The connection always starts at the label and ends at the value. This wire allows you to refer to that particular value by a custom name later in your code.
+
+![Screen Shot 2021-11-17 at 3 18 56 PM](https://media.git.generalassemb.ly/user/37934/files/ec435400-47b9-11ec-8519-23ad18c81c62)
 
 We use variables to help repeat, change, store, or edit our data.
 
@@ -15,62 +19,61 @@ versions of JavaScript `const` and `let` were implemented. `const` is used on
 variables that will not be changed in your JavaScript code. `let` is used for
 variables that do change.
 
-Most of the time, we want our variables to immediately store a value (like a box
-with a cat in it). Therefore, we **assign** values to our variables when we
-declare them.
+Most of the time, we want our variables to immediately point to a value (a label isn't very useful if it doesn't point to anything). Therefore, we **assign** values to our variables when we declare them.
 
 We can create a variable without assigning it a value, if we want. This would be
-like having an empty box.
+like having a label that doesn't point to anything.
 
 ```js
-let noValue
-console.log(noValue)
+let noValue;
+console.log(noValue);
 // => undefined
 ```
 
 Here are three examples of variable assignment and declaration at the same time.
 
 ```js
-const myVar = 42
-console.log(myVar)
+let favoriteFood = "Chocolate";
+console.log(favoriteFood);
 
-const sum = myVar + 8
-console.log(sum)
+let greeting = "hello ";
+console.log(greeting);
 
-let doubleSum = 2 * sum
-console.log(doubleSum)
+const greetingEvvie = greeting + "Evvie";
+console.log(greetingEvvie);
+
 ```
 
 When we declare a variable using `let` or with the old keyword `var` we
 can update our variables:
 
 ```js
-let noValue
-console.log(noValue)
+let noValue;
+console.log(noValue);
 // => undefined
 
-noValue = "assigned now"
-console.log(noValue)
+noValue = "assigned now";
+console.log(noValue);
 // => 'assigned now'
 
 
-var num = 0
-console.log(num)
-// => 0
+var favoriteNumber = 12;
+console.log(favoriteNumber);
+// => 12
 
-num = 1
-console.log(num)
-// => 1
+favoriteNumber = 100;
+console.log(favoriteNumber);
+// => 100
 
 ```
 
 But you can NOT reassign a variable declared with `const`
 
 ```js
-const mobilePhone = 'iPhone'
+const mobilePhone = 'iPhone';
 
-mobilePhone = 'samsung'
-console.log(mobilePhone)
+mobilePhone = 'samsung';
+console.log(mobilePhone);
 // => Uncaught TypeError: Assignment to constant variable.
 ```
 
@@ -78,14 +81,14 @@ JavaScript is a "dynamically-typed" language, meaning a variable can switch
 between data types. The following change is valid.
 
 ```js
-var myFavoriteNumber = 5
+var myFavoriteNumber = 5;
 
-console.log(myFavoriteNumber)
+console.log(myFavoriteNumber);
 // => 5
 
-myFavoriteNumber = "five"
+myFavoriteNumber = "five";
 
-console.log(myFavoriteNumber)
+console.log(myFavoriteNumber);
 // => "five"
 ```
 
@@ -171,4 +174,4 @@ like to comment out and do the same: `command` + `/`.
 
 ## Next: [Primitive Data Types](primitive-data-types.md)
 
-### Previous: [Intro to JS](https://git.generalassemb.ly/SEIR-201/js-data-types)
+
