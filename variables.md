@@ -151,22 +151,10 @@ of it do. This happens much more quickly than you may imagine.
 If you are working on a team, your documentation and commenting practices often
 translate to how easy you are to work with!
 
-```js
-// Single line comment
+<img width="211" alt="Screen Shot 2022-05-11 at 3 39 03 PM" src="https://user-images.githubusercontent.com/11747682/167959123-a5582b0b-8592-4b1c-a5a5-6744e2111e91.png">
 
-/*
-  Multiple
-  line
-  comments
-*/
-```
+The same is goes for commenting a line or section back in.
 
-There is a short cut for commenting something out. To comment out a single line,
-click anywhere on the desired line and hold `command` and press `/`. The same is goes
-for commenting a line back in.
-
-This short cut also works for multiline comments. Simply highlight all the lines you'd
-like to comment out and do the same: `command` + `/`.
 
 
 ------
