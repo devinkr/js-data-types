@@ -10,10 +10,9 @@
 
 ## Intro
 
-Today we are going to get started with our first real programming language of
-the course! We've learned about HTML + CSS in previous classes this week, so we
+We've learned about HTML + CSS in previous classes this week, so we
 know how to make static webpages where there isn't much user interaction. Today
-we are going to move towards making our pages interactive and dynamic.
+we are going to move towards making our pages interactive and dynamic!
 
 But first, we must start with the basics.
 
