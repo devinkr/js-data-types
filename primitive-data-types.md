@@ -154,6 +154,8 @@ The modulus operator - `%` - returns the remainder of a division operation.
 // => 2, which is the remainder of 12 / 5
 ```
 
+<img width="1028" alt="Screen Shot 2022-05-11 at 3 52 21 PM" src="https://user-images.githubusercontent.com/11747682/167960260-e3d9fec2-4011-4247-816b-aabdeeed7f13.png">
+
 Modulus has a pretty handy use case: to check if a number is even. We can do
 this by running `NUMBER % 2`. If a number is even, the result should be 0 (i.e.
 there should be no remainder).
