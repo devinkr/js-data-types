@@ -73,14 +73,8 @@ Once the file is linked, we can go into our JS file and begin coding. In
 console.log("hello world")
 ```
 
-Back at the command line run:
+Let's now open up our website using Live Server!
 
-```sh
-open index.html
-```
-
-Your default browser will open (we ask for this class you use Chrome but other
-browsers will have similar tools you should definitely explore).
 
 You can bring up the Development Tools (DevTools) with the command **Command +
 Option + J** (`⌘ + ⌥ + J`) and should see something that looks like this:
