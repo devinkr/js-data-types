@@ -25,7 +25,7 @@ multiple values). In JavaScript there are five common primitive types:
 5. Null
 
 There is a sixth data type, [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#BigInt_type),
-which is relatively new and not commonly used yet.
+and a seventh call [`Symbol`](https://developer.mozilla.org/en-US/docs/Glossary/Symbol) which are relatively new and not commonly used yet.
 
 ## Strings
 
