@@ -73,7 +73,7 @@ Once the file is linked, we can go into our JS file and begin coding. In
 console.log("hello world")
 ```
 
-Let's now open up our website using Live Server!
+**Let's now open up our website using Live Server!**
 
 
 You can bring up the Development Tools (DevTools) with the command **Command +
