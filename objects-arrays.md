@@ -203,7 +203,7 @@ var arr2 = arr.slice();
 ## Objects
 
 Objects in javascript are fundamental to the language. Everything is an object.
-Aside from the values `null` and `undefined`, **literally in JavaScript is an object**. This will make more sense later.
+Aside from the values `null` and `undefined`, **literally everything in JavaScript is an object**. This will make more sense later.
 
 Like arrays, objects can hold multiple pieces of data of varying types; but unlike arrays, objects use named keys rather than indices to order and access those pieces of data
 
