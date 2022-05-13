@@ -340,12 +340,12 @@ no explanation - and it may be due to type coercion.
 
 ### String Methods
 
-**.substr()**: return a portion of a string. First argument is the
-start position; second argument is the length of the section you copy. If you leave out the second argument it will include everything from the start to the end.
+**.substring()**: return a portion of a string. First argument is the
+start index; second argument is the end index. substring() extracts characters from indexStart up to but not including indexEnd. If you leave out the second argument it will include everything from the start to the end.
 
 ```js
 let greetings = "Hi there friend!";
-let buddy = greetings.substr(9, 6);
+let buddy = greetings.substring(9, 15);
 console.log(buddy);
 // friend
 ```
@@ -398,7 +398,7 @@ console.log(nowImAString);
 // "58320"
 ```
 
-**\*.toFixed()**: Trim a decimal to the specified number of digits.
+**\*.toFixed(digits)**: Formats to the specified number of digits after the decimal point. The number is rounded if necessary, and the fractional part is padded with zeros if necessary so that it has the specified length.
 
 ```js
 let makeMeFixed = 58320.73242;
