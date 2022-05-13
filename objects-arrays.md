@@ -243,8 +243,7 @@ To declare an object, just write `{}`
 let students = {};
 ```
 
-Objects **MUST** contain key/value pairs to be valid syntax. The key and value
-are separated by a `:`
+In objects, the key and value are separated by a `:`
 
 ```js
 let students = {
